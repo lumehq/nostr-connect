@@ -4,7 +4,7 @@ import {render} from 'react-dom'
 import {generatePrivateKey, nip19} from 'nostr-tools'
 import QRCode from 'react-qr-code'
 import * as Tabs from '@radix-ui/react-tabs'
-import {Logo} from './icons'
+import {LogoIcon} from './icons'
 import {removePermissions} from './common'
 
 function Options() {
@@ -83,7 +83,7 @@ function Options() {
     <div className="w-screen h-screen flex flex-col items-center justify-center">
       <div className="p-8 shadow-primary border border-primary rounded-2xl max-w-xl mx-auto flex flex-col gap-4">
         <div className="flex items-center gap-4">
-          <Logo className="w-14 h-14" />
+          <LogoIcon />
           <div>
             <h1 className="text-lg font-semibold">Nostr Connect</h1>
             <p className="text-sm text-muted font-medium">Nostr signer</p>
@@ -153,10 +153,7 @@ function Options() {
             </div>
           </div>
           <Tabs.Root className="mb-4" defaultValue="relays">
-            <Tabs.List
-              className="mb-4 w-full border-b border-primary h-11 flex items-center gap-6"
-              aria-label="Manage relay"
-            >
+            <Tabs.List className="mb-4 w-full border-b border-primary h-11 flex items-center gap-6">
               <Tabs.Trigger
                 className="font-medium flex items-center text-muted gap-2 h-11 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
                 value="relays"

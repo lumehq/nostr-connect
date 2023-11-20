@@ -26,6 +26,9 @@ dependencies:
   events:
     specifier: ^3.3.0
     version: 3.3.0
+  minidenticons:
+    specifier: ^4.2.0
+    version: 4.2.0
   nostr-tools:
     specifier: ^1.17.0
     version: 1.17.0
@@ -4945,6 +4948,11 @@ packages:
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+    dev: false
+
+  /minidenticons@4.2.0:
+    resolution: {integrity: sha512-2T3VU1N30yI3kXMRbdLsJ5DgsBoGLi2+2hbm1xTOU2RQXWW5wwpmz9XQohVSsVlhymf4W69sMGj6s39t796PBA==}
+    engines: {node: '>=15.14.0'}
     dev: false
 
   /minimatch@3.1.2:
