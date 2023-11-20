@@ -19,6 +19,7 @@ esbuild
     define: {
       window: 'self',
       global: 'self'
-    }
+    },
+    watch: !prod,
   })
   .then(() => console.log('build success.'))

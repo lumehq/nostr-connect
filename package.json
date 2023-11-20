@@ -1,6 +1,7 @@
 {
   "license": "WTFPL",
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.0.4",
     "async-mutex": "^0.3.2",
     "esbuild": "^0.14.54",
     "eslint": "^8.54.0",
@@ -18,8 +19,8 @@
     "webextension-polyfill": "^0.8.0"
   },
   "scripts": {
+    "dev": "./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output.css --watch",
     "build": "./build.js prod",
-    "watch": "ag -l --js | entr ./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output.css --watch",
     "package": "./build.js prod; cd extension; zip -r archive *; cd ..; mv extension/archive.zip ./nos2x.zip"
   },
   "devDependencies": {

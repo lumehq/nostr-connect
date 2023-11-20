@@ -4,6 +4,7 @@ import {render} from 'react-dom'
 import {generatePrivateKey, nip19} from 'nostr-tools'
 import QRCode from 'react-qr-code'
 
+import {Logo} from './icons'
 import {removePermissions} from './common'
 
 function Options() {
@@ -79,171 +80,194 @@ function Options() {
   }
 
   return (
-    <div className="mt-10 p-8 bg-white dark:bg-black border border-gray-100 dark:border-gray-900 rounded-2xl max-w-xl mx-auto">
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-xl" />
-        <div>
-          <h1 className="text-lg font-bold">Nostr Connect</h1>
-          <p className="text-base text-gray-500 font-medium">Nostr signer</p>
-        </div>
-      </div>
-      <div className="mt-4 flex flex-col">
-        <div className="mb-6 flex flex-col gap-2">
-          <div className="font-semibold text-base">Private key:</div>
+    <div className="w-screen h-screen flex flex-col items-center justify-center">
+      <div className="p-8 shadow-primary border border-primary rounded-2xl max-w-xl mx-auto">
+        <div className="flex items-center gap-4">
+          <Logo className="w-14 h-14" />
           <div>
-            <div className="flex gap-2">
-              <input
-                type={hidingPrivateKey ? 'password' : 'text'}
-                value={privKey}
-                onChange={handleKeyChange}
-                className="flex-1 h-9 bg-transparent border px-3 py-1 border-gray-200 dark:border-gray-800 rounded-lg"
-              />
-              <div className="shrink-0">
-                {!privKey && (
-                  <button
-                    onClick={generate}
-                    className="px-3 h-9 font-bold border border-gray-200 shadow-sm dark:border-gray-800 rounded-lg inline-flex items-center justify-center"
-                  >
-                    Generate
-                  </button>
-                )}
-                {privKey && hidingPrivateKey && (
-                  <button onClick={() => hidePrivateKey(false)}>
-                    Show key
-                  </button>
-                )}
-                {privKey && !hidingPrivateKey && (
-                  <button onClick={() => hidePrivateKey(true)}>Hide key</button>
-                )}
-              </div>
-            </div>
-            <p className="text-gray-500 text-sm mt-1">
-              Your key is stored locally. The developer has no way of seeing
-              your keys.
-            </p>
-            {privKey && !isKeyValid() && (
-              <div style={{color: 'red'}}>private key is invalid!</div>
-            )}
-            {!hidingPrivateKey && isKeyValid() && (
-              <div
-                style={{
-                  height: 'auto',
-                  maxWidth: 256,
-                  width: '100%',
-                  marginTop: '5px'
-                }}
-              >
-                <QRCode
-                  size={256}
-                  style={{height: 'auto', maxWidth: '100%', width: '100%'}}
-                  value={privKey.toUpperCase()}
-                  viewBox={`0 0 256 256`}
-                />
-              </div>
-            )}
+            <h1 className="text-lg font-semibold">Nostr Connect</h1>
+            <p className="text-sm text-muted font-medium">Nostr signer</p>
           </div>
         </div>
-        <div className="mb-4 flex flex-col">
-          <div className="mb-4 w-full border-b border-gray-100 h-11 flex items-center gap-6">
-            <div className="text-indigo-600 font-medium flex gap-2 items-center h-11 border-b border-indigo-600">
-              Relays
-              <span className="px-3 h-6 inline-flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full">
-                10
-              </span>
-            </div>
-            <div className="text-gray-300 font-medium flex items-center gap-2 h-11">
-              Permissions
-              <span className="px-3 h-6 inline-flex items-center justify-center bg-gray-100 rounded-full">
-                0
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className="font-semibold text-base">Preferred Relays:</div>
+        <div className="mt-4 flex flex-col">
+          <div className="mb-6 flex flex-col gap-2">
+            <div className="font-semibold text-base">Private key:</div>
             <div>
-              {relays.map(({url, policy}, i) => (
-                <div
-                  key={i}
-                  style={{display: 'flex', alignItems: 'center', gap: '15px'}}
-                >
-                  <input
-                    style={{width: '400px'}}
-                    value={url}
-                    onChange={changeRelayURL.bind(null, i)}
-                  />
-                  <div style={{display: 'flex', gap: '5px'}}>
-                    <label style={{display: 'flex', alignItems: 'center'}}>
-                      read
-                      <input
-                        type="checkbox"
-                        checked={policy.read}
-                        onChange={toggleRelayPolicy.bind(null, i, 'read')}
-                      />
-                    </label>
-                    <label style={{display: 'flex', alignItems: 'center'}}>
-                      write
-                      <input
-                        type="checkbox"
-                        checked={policy.write}
-                        onChange={toggleRelayPolicy.bind(null, i, 'write')}
-                      />
-                    </label>
-                  </div>
-                  <button onClick={removeRelay.bind(null, i)}>remove</button>
-                </div>
-              ))}
               <div className="flex gap-2">
                 <input
-                  style={{width: '400px'}}
-                  value={newRelayURL}
-                  onChange={e => setNewRelayURL(e.target.value)}
-                  onKeyDown={e => {
-                    if (e.key === 'Enter') addNewRelay()
-                  }}
-                  className="flex-1 h-9 bg-transparent border px-3 py-1 border-gray-200 dark:border-gray-800 rounded-lg"
+                  type={hidingPrivateKey ? 'password' : 'text'}
+                  value={privKey}
+                  onChange={handleKeyChange}
+                  className="flex-1 h-9 bg-transparent border border-primary px-3 py-1 rounded-lg"
                 />
-                <button
-                  disabled={!newRelayURL}
-                  onClick={addNewRelay}
-                  className="shrink-0 px-3 h-9 font-bold border border-gray-200 shadow-sm dark:border-gray-800 rounded-lg inline-flex items-center justify-center disabled:text-gray-300"
-                >
-                  Add Relay
-                </button>
+                <div className="shrink-0">
+                  {!privKey && (
+                    <button
+                      type="button"
+                      onClick={generate}
+                      className="px-3 h-9 font-semibold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Generate
+                    </button>
+                  )}
+                  {privKey && hidingPrivateKey && (
+                    <button
+                      type="button"
+                      onClick={() => hidePrivateKey(false)}
+                      className="px-3 h-9 font-bold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Show key
+                    </button>
+                  )}
+                  {privKey && !hidingPrivateKey && (
+                    <button
+                      type="button"
+                      onClick={() => hidePrivateKey(true)}
+                      className="px-3 h-9 font-bold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Hide key
+                    </button>
+                  )}
+                </div>
+              </div>
+              <div className="mt-1 text-sm">
+                {privKey && !isKeyValid() ? (
+                  <p className="text-red-500">Private key is invalid!</p>
+                ) : (
+                  <p className="text-gray-500">
+                    Your key is stored locally. The developer has no way of
+                    seeing your keys.
+                  </p>
+                )}
+              </div>
+              {!hidingPrivateKey && isKeyValid() && (
+                <div className="mt-5 flex flex-col items-center">
+                  <QRCode
+                    size={256}
+                    value={privKey.toUpperCase()}
+                    viewBox={`0 0 256 256`}
+                    className="w-full max-w-full"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="mb-4 flex flex-col">
+            <div className="mb-4 w-full border-b border-gray-100 h-11 flex items-center gap-6">
+              <div className="text-primary font-medium flex gap-2 items-center h-11 border-b border-secondary">
+                Relays
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-secondary text-primary rounded-full">
+                  {relays.length}
+                </span>
+              </div>
+              <div className="font-medium flex items-center text-muted gap-2 h-11">
+                Permissions
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted rounded-full">
+                  0
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="font-semibold text-base">Preferred Relays:</div>
+              <div className="flex flex-col gap-2">
+                {relays.map(({url, policy}, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <input
+                      value={url}
+                      onChange={changeRelayURL.bind(null, i)}
+                      className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
+                    />
+                    <div className="flex items-center gap-2">
+                      <label className="inline-flex items-center gap-2 text-muted font-medium">
+                        <input
+                          type="checkbox"
+                          checked={policy.read}
+                          onChange={toggleRelayPolicy.bind(null, i, 'read')}
+                        />
+                        <p>Read</p>
+                      </label>
+                      <label className="inline-flex items-center gap-2 text-muted font-medium">
+                        <input
+                          type="checkbox"
+                          checked={policy.write}
+                          onChange={toggleRelayPolicy.bind(null, i, 'write')}
+                        />
+                        <p>Write</p>
+                      </label>
+                    </div>
+                    <button
+                      onClick={removeRelay.bind(null, i)}
+                      className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+                <div className="flex gap-2">
+                  <input
+                    value={newRelayURL}
+                    onChange={e => setNewRelayURL(e.target.value)}
+                    onKeyDown={e => {
+                      if (e.key === 'Enter') addNewRelay()
+                    }}
+                    placeholder="wss://"
+                    className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
+                  />
+                  <button
+                    disabled={!newRelayURL}
+                    onClick={addNewRelay}
+                    className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                  >
+                    Add Relay
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="mb-6">
-          <label className="flex gap-2 items-center">
-            <input
-              type="checkbox"
-              checked={showNotifications}
-              onChange={handleNotifications}
-              className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
-            />
-            Show desktop notifications when a permissions has been used
-          </label>
-        </div>
-        <div className="mb-4 flex items-center justify-between">
-          <div className="font-semibold text-base">Advanced</div>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          <div className="mb-6">
+            <label className="flex gap-2 items-center">
+              <input
+                type="checkbox"
+                checked={showNotifications}
+                onChange={handleNotifications}
+                className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
               />
-            </svg>
+              Show desktop notifications when a permissions has been used
+            </label>
           </div>
-        </div>
-        {/*<div>
+          <details className="mb-4">
+            <summary className="flex items-center justify-between">
+              <div className="font-semibold text-base">Advanced</div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div className="mt-2">
+              <label className="flex gap-2 items-center">
+                <input
+                  type="checkbox"
+                  checked={handleNostrLinks}
+                  onChange={changeHandleNostrLinks}
+                  className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
+                />
+                Handle nostr links
+              </label>
+            </div>
+          </details>
+          {/*<div>
           <label style={{display: 'flex', alignItems: 'center'}}>
             <div>
               handle{' '}
@@ -291,13 +315,13 @@ function Options() {
             )}
           </div>
         </div>*/}
-        {/*<div style={{fontSize: '120%'}}>
+          {/*<div style={{fontSize: '120%'}}>
           {messages.map((message, i) => (
             <div key={i}>{message}</div>
           ))}
         </div>*/}
-      </div>
-      {/*<div>
+        </div>
+        {/*<div>
         <h2>permissions</h2>
         <table>
           <thead>
@@ -357,13 +381,14 @@ function Options() {
           </div>
         )}
         </div>*/}
-      <button
-        disabled={!unsavedChanges.length}
-        onClick={saveChanges}
-        className="w-full h-10 bg-indigo-600 rounded-xl font-bold inline-flex items-center justify-center text-white"
-      >
-        Save
-      </button>
+        <button
+          disabled={!unsavedChanges.length}
+          onClick={saveChanges}
+          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white"
+        >
+          Save
+        </button>
+      </div>
     </div>
   )
 
