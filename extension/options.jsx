@@ -3,7 +3,7 @@ import React, {useState, useCallback, useEffect} from 'react'
 import {render} from 'react-dom'
 import {generatePrivateKey, nip19} from 'nostr-tools'
 import QRCode from 'react-qr-code'
-
+import * as Tabs from '@radix-ui/react-tabs'
 import {Logo} from './icons'
 import {removePermissions} from './common'
 
@@ -81,7 +81,7 @@ function Options() {
 
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center">
-      <div className="p-8 shadow-primary border border-primary rounded-2xl max-w-xl mx-auto">
+      <div className="p-8 shadow-primary border border-primary rounded-2xl max-w-xl mx-auto flex flex-col gap-4">
         <div className="flex items-center gap-4">
           <Logo className="w-14 h-14" />
           <div>
@@ -89,8 +89,8 @@ function Options() {
             <p className="text-sm text-muted font-medium">Nostr signer</p>
           </div>
         </div>
-        <div className="mt-4 flex flex-col">
-          <div className="mb-6 flex flex-col gap-2">
+        <div className="flex flex-col">
+          <div className="mb-4 flex flex-col gap-2">
             <div className="font-semibold text-base">Private key:</div>
             <div>
               <div className="flex gap-2">
@@ -152,79 +152,174 @@ function Options() {
               )}
             </div>
           </div>
-          <div className="mb-4 flex flex-col">
-            <div className="mb-4 w-full border-b border-gray-100 h-11 flex items-center gap-6">
-              <div className="text-primary font-medium flex gap-2 items-center h-11 border-b border-secondary">
+          <Tabs.Root className="mb-4" defaultValue="relays">
+            <Tabs.List
+              className="mb-4 w-full border-b border-primary h-11 flex items-center gap-6"
+              aria-label="Manage relay"
+            >
+              <Tabs.Trigger
+                className="font-medium flex items-center text-muted gap-2 h-11 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
+                value="relays"
+              >
                 Relays
-                <span className="px-3 h-6 inline-flex items-center justify-center bg-secondary text-primary rounded-full">
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted data-[state=active]:text-primary rounded-full">
                   {relays.length}
                 </span>
-              </div>
-              <div className="font-medium flex items-center text-muted gap-2 h-11">
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                className="font-medium flex items-center text-muted gap-2 h-11 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
+                value="permissions"
+              >
                 Permissions
-                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted rounded-full">
-                  0
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted data-[state=active]:text-primary rounded-full">
+                  {policies.length}
                 </span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="font-semibold text-base">Preferred Relays:</div>
+              </Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="relays">
               <div className="flex flex-col gap-2">
-                {relays.map(({url, policy}, i) => (
-                  <div key={i} className="flex items-center gap-4">
+                <div className="font-semibold text-base">Preferred Relays:</div>
+                <div className="flex flex-col gap-2">
+                  {relays.map(({url, policy}, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <input
+                        value={url}
+                        onChange={changeRelayURL.bind(null, i)}
+                        className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
+                      />
+                      <div className="flex items-center gap-2">
+                        <label className="inline-flex items-center gap-2 text-muted font-medium">
+                          <input
+                            type="checkbox"
+                            checked={policy.read}
+                            onChange={toggleRelayPolicy.bind(null, i, 'read')}
+                          />
+                          <p>Read</p>
+                        </label>
+                        <label className="inline-flex items-center gap-2 text-muted font-medium">
+                          <input
+                            type="checkbox"
+                            checked={policy.write}
+                            onChange={toggleRelayPolicy.bind(null, i, 'write')}
+                          />
+                          <p>Write</p>
+                        </label>
+                      </div>
+                      <button
+                        onClick={removeRelay.bind(null, i)}
+                        className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                  <div className="flex gap-2">
                     <input
-                      value={url}
-                      onChange={changeRelayURL.bind(null, i)}
+                      value={newRelayURL}
+                      onChange={e => setNewRelayURL(e.target.value)}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') addNewRelay()
+                      }}
+                      placeholder="wss://"
                       className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
                     />
-                    <div className="flex items-center gap-2">
-                      <label className="inline-flex items-center gap-2 text-muted font-medium">
-                        <input
-                          type="checkbox"
-                          checked={policy.read}
-                          onChange={toggleRelayPolicy.bind(null, i, 'read')}
-                        />
-                        <p>Read</p>
-                      </label>
-                      <label className="inline-flex items-center gap-2 text-muted font-medium">
-                        <input
-                          type="checkbox"
-                          checked={policy.write}
-                          onChange={toggleRelayPolicy.bind(null, i, 'write')}
-                        />
-                        <p>Write</p>
-                      </label>
-                    </div>
                     <button
-                      onClick={removeRelay.bind(null, i)}
+                      disabled={!newRelayURL}
+                      onClick={addNewRelay}
                       className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
                     >
-                      Remove
+                      Add Relay
                     </button>
                   </div>
-                ))}
-                <div className="flex gap-2">
-                  <input
-                    value={newRelayURL}
-                    onChange={e => setNewRelayURL(e.target.value)}
-                    onKeyDown={e => {
-                      if (e.key === 'Enter') addNewRelay()
-                    }}
-                    placeholder="wss://"
-                    className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
-                  />
-                  <button
-                    disabled={!newRelayURL}
-                    onClick={addNewRelay}
-                    className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
-                  >
-                    Add Relay
-                  </button>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="mb-6">
+            </Tabs.Content>
+            <Tabs.Content value="permissions">
+              <div className="flex flex-col gap-2">
+                <div className="font-semibold text-base">Permissions:</div>
+                {!policies.length ? (
+                  <div className="text-muted">
+                    You haven't granted any permissions to any apps yet
+                  </div>
+                ) : (
+                  <table className="table-auto">
+                    <thead>
+                      <tr className="mb-2">
+                        <th className="text-left border-b-8 border-transparent">
+                          Domain
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Permission
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Answer
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Conditions
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Since
+                        </th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {policies.map(
+                        ({host, type, accept, conditions, created_at}) => (
+                          <tr
+                            key={
+                              host + type + accept + JSON.stringify(conditions)
+                            }
+                          >
+                            <td className="font-semibold">{host}</td>
+                            <td className="text-muted">{type}</td>
+                            <td className="text-muted">
+                              {accept === 'true' ? 'allow' : 'deny'}
+                            </td>
+                            <td className="text-muted">
+                              {conditions.kinds
+                                ? `kinds: ${Object.keys(conditions.kinds).join(
+                                    ', '
+                                  )}`
+                                : 'always'}
+                            </td>
+                            <td className="text-muted">
+                              {new Date(created_at * 1000)
+                                .toISOString()
+                                .split('.')[0]
+                                .split('T')
+                                .join(' ')}
+                            </td>
+                            <td>
+                              <button
+                                onClick={handleRevoke}
+                                data-host={host}
+                                data-accept={accept}
+                                data-type={type}
+                                className="text-primary font-semibold"
+                              >
+                                Revoke
+                              </button>
+                            </td>
+                          </tr>
+                        )
+                      )}
+                      {!policies.length && (
+                        <tr>
+                          {Array(5)
+                            .fill('N/A')
+                            .map((v, i) => (
+                              <td key={i}>{v}</td>
+                            ))}
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </Tabs.Content>
+          </Tabs.Root>
+          <div className="mb-3">
             <label className="flex gap-2 items-center">
               <input
                 type="checkbox"
@@ -235,38 +330,40 @@ function Options() {
               Show desktop notifications when a permissions has been used
             </label>
           </div>
-          <details className="mb-4">
-            <summary className="flex items-center justify-between">
-              <div className="font-semibold text-base">Advanced</div>
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          <div>
+            <details>
+              <summary className="flex items-center justify-between">
+                <div className="font-semibold text-base">Advanced</div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </div>
+              </summary>
+              <div className="mt-3">
+                <label className="flex gap-2 items-center">
+                  <input
+                    type="checkbox"
+                    checked={handleNostrLinks}
+                    onChange={changeHandleNostrLinks}
+                    className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
                   />
-                </svg>
+                  Handle nostr links
+                </label>
               </div>
-            </summary>
-            <div className="mt-2">
-              <label className="flex gap-2 items-center">
-                <input
-                  type="checkbox"
-                  checked={handleNostrLinks}
-                  onChange={changeHandleNostrLinks}
-                  className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
-                />
-                Handle nostr links
-              </label>
-            </div>
-          </details>
+            </details>
+          </div>
           {/*<div>
           <label style={{display: 'flex', alignItems: 'center'}}>
             <div>
@@ -321,70 +418,10 @@ function Options() {
           ))}
         </div>*/}
         </div>
-        {/*<div>
-        <h2>permissions</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>domain</th>
-              <th>permission</th>
-              <th>answer</th>
-              <th>conditions</th>
-              <th>since</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {policies.map(({host, type, accept, conditions, created_at}) => (
-              <tr key={host + type + accept + JSON.stringify(conditions)}>
-                <td>{host}</td>
-                <td>{type}</td>
-                <td>{accept === 'true' ? 'allow' : 'deny'}</td>
-                <td>
-                  {conditions.kinds
-                    ? `kinds: ${Object.keys(conditions.kinds).join(', ')}`
-                    : 'always'}
-                </td>
-                <td>
-                  {new Date(created_at * 1000)
-                    .toISOString()
-                    .split('.')[0]
-                    .split('T')
-                    .join(' ')}
-                </td>
-                <td>
-                  <button
-                    onClick={handleRevoke}
-                    data-host={host}
-                    data-accept={accept}
-                    data-type={type}
-                  >
-                    revoke
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {!policies.length && (
-              <tr>
-                {Array(5)
-                  .fill('N/A')
-                  .map((v, i) => (
-                    <td key={i}>{v}</td>
-                  ))}
-              </tr>
-            )}
-          </tbody>
-        </table>
-        {!policies.length && (
-          <div style={{marginTop: '5px'}}>
-            no permissions have been granted yet
-          </div>
-        )}
-        </div>*/}
         <button
           disabled={!unsavedChanges.length}
           onClick={saveChanges}
-          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white"
+          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white disabled:cursor-not-allowed"
         >
           Save
         </button>

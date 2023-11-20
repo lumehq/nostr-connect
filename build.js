@@ -14,12 +14,12 @@ esbuild
       'background.build': './extension/background.js',
       'content-script.build': './extension/content-script.js'
     },
-    outdir: './extension',
+    outdir: './extension/build',
     sourcemap: prod ? false : 'inline',
     define: {
       window: 'self',
       global: 'self'
     },
-    watch: !prod,
+    watch: !prod
   })
   .then(() => console.log('build success.'))
