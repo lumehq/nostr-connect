@@ -79,44 +79,48 @@ function Options() {
   }
 
   return (
-    <>
-      <h1 style={{fontSize: '25px', marginBlockEnd: '0px'}}>nos2x</h1>
-      <p style={{marginBlockStart: '0px'}}>nostr signer extension</p>
-      <h2 style={{marginBlockStart: '20px', marginBlockEnd: '5px'}}>options</h2>
-      <div
-        style={{
-          marginBottom: '10px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
-          width: 'fit-content'
-        }}
-      >
+    <div className="mt-10 p-8 bg-white dark:bg-black border border-gray-100 dark:border-gray-900 rounded-2xl max-w-xl mx-auto">
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-xl" />
         <div>
-          <div>private key:&nbsp;</div>
-          <div
-            style={{
-              marginLeft: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '10px'
-            }}
-          >
-            <div style={{display: 'flex', gap: '10px'}}>
+          <h1 className="text-lg font-bold">Nostr Connect</h1>
+          <p className="text-base text-gray-500 font-medium">Nostr signer</p>
+        </div>
+      </div>
+      <div className="mt-4 flex flex-col">
+        <div className="mb-6 flex flex-col gap-2">
+          <div className="font-semibold text-base">Private key:</div>
+          <div>
+            <div className="flex gap-2">
               <input
                 type={hidingPrivateKey ? 'password' : 'text'}
-                style={{width: '600px'}}
                 value={privKey}
                 onChange={handleKeyChange}
+                className="flex-1 h-9 bg-transparent border px-3 py-1 border-gray-200 dark:border-gray-800 rounded-lg"
               />
-              {privKey === '' && <button onClick={generate}>generate</button>}
-              {privKey && hidingPrivateKey && (
-                <button onClick={() => hidePrivateKey(false)}>show key</button>
-              )}
-              {privKey && !hidingPrivateKey && (
-                <button onClick={() => hidePrivateKey(true)}>hide key</button>
-              )}
+              <div className="shrink-0">
+                {!privKey && (
+                  <button
+                    onClick={generate}
+                    className="px-3 h-9 font-bold border border-gray-200 shadow-sm dark:border-gray-800 rounded-lg inline-flex items-center justify-center"
+                  >
+                    Generate
+                  </button>
+                )}
+                {privKey && hidingPrivateKey && (
+                  <button onClick={() => hidePrivateKey(false)}>
+                    Show key
+                  </button>
+                )}
+                {privKey && !hidingPrivateKey && (
+                  <button onClick={() => hidePrivateKey(true)}>Hide key</button>
+                )}
+              </div>
             </div>
+            <p className="text-gray-500 text-sm mt-1">
+              Your key is stored locally. The developer has no way of seeing
+              your keys.
+            </p>
             {privKey && !isKeyValid() && (
               <div style={{color: 'red'}}>private key is invalid!</div>
             )}
@@ -139,63 +143,107 @@ function Options() {
             )}
           </div>
         </div>
-        <div>
-          <div>preferred relays:</div>
-          <div
-            style={{
-              marginLeft: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1px'
-            }}
-          >
-            {relays.map(({url, policy}, i) => (
-              <div
-                key={i}
-                style={{display: 'flex', alignItems: 'center', gap: '15px'}}
-              >
+        <div className="mb-4 flex flex-col">
+          <div className="mb-4 w-full border-b border-gray-100 h-11 flex items-center gap-6">
+            <div className="text-indigo-600 font-medium flex gap-2 items-center h-11 border-b border-indigo-600">
+              Relays
+              <span className="px-3 h-6 inline-flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full">
+                10
+              </span>
+            </div>
+            <div className="text-gray-300 font-medium flex items-center gap-2 h-11">
+              Permissions
+              <span className="px-3 h-6 inline-flex items-center justify-center bg-gray-100 rounded-full">
+                0
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="font-semibold text-base">Preferred Relays:</div>
+            <div>
+              {relays.map(({url, policy}, i) => (
+                <div
+                  key={i}
+                  style={{display: 'flex', alignItems: 'center', gap: '15px'}}
+                >
+                  <input
+                    style={{width: '400px'}}
+                    value={url}
+                    onChange={changeRelayURL.bind(null, i)}
+                  />
+                  <div style={{display: 'flex', gap: '5px'}}>
+                    <label style={{display: 'flex', alignItems: 'center'}}>
+                      read
+                      <input
+                        type="checkbox"
+                        checked={policy.read}
+                        onChange={toggleRelayPolicy.bind(null, i, 'read')}
+                      />
+                    </label>
+                    <label style={{display: 'flex', alignItems: 'center'}}>
+                      write
+                      <input
+                        type="checkbox"
+                        checked={policy.write}
+                        onChange={toggleRelayPolicy.bind(null, i, 'write')}
+                      />
+                    </label>
+                  </div>
+                  <button onClick={removeRelay.bind(null, i)}>remove</button>
+                </div>
+              ))}
+              <div className="flex gap-2">
                 <input
                   style={{width: '400px'}}
-                  value={url}
-                  onChange={changeRelayURL.bind(null, i)}
+                  value={newRelayURL}
+                  onChange={e => setNewRelayURL(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') addNewRelay()
+                  }}
+                  className="flex-1 h-9 bg-transparent border px-3 py-1 border-gray-200 dark:border-gray-800 rounded-lg"
                 />
-                <div style={{display: 'flex', gap: '5px'}}>
-                  <label style={{display: 'flex', alignItems: 'center'}}>
-                    read
-                    <input
-                      type="checkbox"
-                      checked={policy.read}
-                      onChange={toggleRelayPolicy.bind(null, i, 'read')}
-                    />
-                  </label>
-                  <label style={{display: 'flex', alignItems: 'center'}}>
-                    write
-                    <input
-                      type="checkbox"
-                      checked={policy.write}
-                      onChange={toggleRelayPolicy.bind(null, i, 'write')}
-                    />
-                  </label>
-                </div>
-                <button onClick={removeRelay.bind(null, i)}>remove</button>
+                <button
+                  disabled={!newRelayURL}
+                  onClick={addNewRelay}
+                  className="shrink-0 px-3 h-9 font-bold border border-gray-200 shadow-sm dark:border-gray-800 rounded-lg inline-flex items-center justify-center disabled:text-gray-300"
+                >
+                  Add Relay
+                </button>
               </div>
-            ))}
-            <div style={{display: 'flex', gap: '10px', marginTop: '5px'}}>
-              <input
-                style={{width: '400px'}}
-                value={newRelayURL}
-                onChange={e => setNewRelayURL(e.target.value)}
-                onKeyDown={e => {
-                  if (e.key === 'Enter') addNewRelay()
-                }}
-              />
-              <button disabled={!newRelayURL} onClick={addNewRelay}>
-                add relay
-              </button>
             </div>
           </div>
         </div>
-        <div>
+        <div className="mb-6">
+          <label className="flex gap-2 items-center">
+            <input
+              type="checkbox"
+              checked={showNotifications}
+              onChange={handleNotifications}
+              className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
+            />
+            Show desktop notifications when a permissions has been used
+          </label>
+        </div>
+        <div className="mb-4 flex items-center justify-between">
+          <div className="font-semibold text-base">Advanced</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+        {/*<div>
           <label style={{display: 'flex', alignItems: 'center'}}>
             <div>
               handle{' '}
@@ -242,29 +290,14 @@ function Options() {
               </div>
             )}
           </div>
-        </div>
-        <label style={{display: 'flex', alignItems: 'center'}}>
-          show notifications when permissions are used:
-          <input
-            type="checkbox"
-            checked={showNotifications}
-            onChange={handleNotifications}
-          />
-        </label>
-        <button
-          disabled={!unsavedChanges.length}
-          onClick={saveChanges}
-          style={{padding: '5px 20px'}}
-        >
-          save
-        </button>
-        <div style={{fontSize: '120%'}}>
+        </div>*/}
+        {/*<div style={{fontSize: '120%'}}>
           {messages.map((message, i) => (
             <div key={i}>{message}</div>
           ))}
-        </div>
+        </div>*/}
       </div>
-      <div>
+      {/*<div>
         <h2>permissions</h2>
         <table>
           <thead>
@@ -323,8 +356,15 @@ function Options() {
             no permissions have been granted yet
           </div>
         )}
-      </div>
-    </>
+        </div>*/}
+      <button
+        disabled={!unsavedChanges.length}
+        onClick={saveChanges}
+        className="w-full h-10 bg-indigo-600 rounded-xl font-bold inline-flex items-center justify-center text-white"
+      >
+        Save
+      </button>
+    </div>
   )
 
   async function handleKeyChange(e) {
