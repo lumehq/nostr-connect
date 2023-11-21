@@ -51,9 +51,9 @@ function Prompt() {
           </div>
         </div>
         {params && (
-          <div>
+          <div className="flex flex-col gap-1">
             <p>Now acting on</p>
-            <pre className="bg-muted rounded-xl p-3">
+            <pre className="bg-muted px-2 rounded-xl overflow-scroll">
               <code>{JSON.stringify(event || params, null, 2)}</code>
             </pre>
           </div>

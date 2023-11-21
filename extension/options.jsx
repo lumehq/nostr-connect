@@ -425,7 +425,7 @@ function Options() {
               <div className="mt-3">
                 <div className="flex items-center gap-2">
                   <Checkbox.Root
-                    id="notification"
+                    id="nostrlink"
                     className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
                     checked={handleNostrLinks}
                     onCheckedChange={changeHandleNostrLinks}
@@ -447,7 +447,7 @@ function Options() {
                       </svg>
                     </Checkbox.Indicator>
                   </Checkbox.Root>
-                  <label htmlFor="notification">Handle nostr links</label>
+                  <label htmlFor="nostrlink">Handle nostr links</label>
                 </div>
                 {handleNostrLinks && (
                   <div className="mt-3">
@@ -464,20 +464,20 @@ function Options() {
                       )}
                     </div>
                     {showProtocolHandlerHelp && (
-                      <pre className="bg-muted p-2 rounded-xl break-all">{`
-    {raw} = anything after the colon, i.e. the full nip19 bech32 string
-    {hex} = hex pubkey for npub or nprofile, hex event id for note or nevent
-    {p_or_e} = "p" for npub or nprofile, "e" for note or nevent
-    {u_or_n} = "u" for npub or nprofile, "n" for note or nevent
-    {relay0} = first relay in a nprofile or nevent
-    {relay1} = second relay in a nprofile or nevent
-    {relay2} = third relay in a nprofile or nevent
-    {hrp} = human-readable prefix of the nip19 string
+                      <pre className="bg-muted px-2 rounded-xl overflow-scroll">{`
+{raw} = anything after the colon, i.e. the full nip19 bech32 string
+{hex} = hex pubkey for npub or nprofile, hex event id for note or nevent
+{p_or_e} = "p" for npub or nprofile, "e" for note or nevent
+{u_or_n} = "u" for npub or nprofile, "n" for note or nevent
+{relay0} = first relay in a nprofile or nevent
+{relay1} = second relay in a nprofile or nevent
+{relay2} = third relay in a nprofile or nevent
+{hrp} = human-readable prefix of the nip19 string
 
-    examples:
-      - https://njump.me/{raw}
-      - https://snort.social/{raw}
-      - https://nostr.band/{raw}
+examples:
+  - https://njump.me/{raw}
+  - https://snort.social/{raw}
+  - https://nostr.band/{raw}
                 `}</pre>
                     )}
                   </div>
@@ -489,7 +489,7 @@ function Options() {
         <button
           disabled={!unsavedChanges.length}
           onClick={saveChanges}
-          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white disabled:cursor-not-allowed"
+          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white disabled:cursor-not-allowed disabled:opacity-70 transform active:translate-y-1 transition-transform ease-in-out duration-75"
         >
           Save
         </button>
@@ -569,6 +569,7 @@ function Options() {
 
   function addNewRelay() {
     if (newRelayURL.trim() === '') return
+    if (!newRelayURL.startsWith('wss://')) return
     relays.push({
       url: newRelayURL,
       policy: {read: true, write: true}
