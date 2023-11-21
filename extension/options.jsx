@@ -6,6 +6,7 @@ import QRCode from 'react-qr-code'
 import * as Tabs from '@radix-ui/react-tabs'
 import {LogoIcon} from './icons'
 import {removePermissions} from './common'
+import * as Checkbox from '@radix-ui/react-checkbox'
 
 function Options() {
   let [privKey, setPrivKey] = useState('')
@@ -185,22 +186,76 @@ function Options() {
                         className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
                       />
                       <div className="flex items-center gap-2">
-                        <label className="inline-flex items-center gap-2 text-muted font-medium">
-                          <input
-                            type="checkbox"
+                        <div className="inline-flex items-center gap-2">
+                          <Checkbox.Root
+                            id={`read-${i}`}
                             checked={policy.read}
-                            onChange={toggleRelayPolicy.bind(null, i, 'read')}
-                          />
-                          <p>Read</p>
-                        </label>
-                        <label className="inline-flex items-center gap-2 text-muted font-medium">
-                          <input
-                            type="checkbox"
+                            onCheckedChange={toggleRelayPolicy.bind(
+                              null,
+                              i,
+                              'read'
+                            )}
+                            className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                          >
+                            <Checkbox.Indicator className="text-white">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.5 12.75l6 6 9-13.5"
+                                />
+                              </svg>
+                            </Checkbox.Indicator>
+                          </Checkbox.Root>
+                          <label
+                            htmlFor={`read-${i}`}
+                            className="text-muted font-medium"
+                          >
+                            Read
+                          </label>
+                        </div>
+                        <div className="inline-flex items-center gap-2">
+                          <Checkbox.Root
+                            id={`write-${i}`}
                             checked={policy.write}
-                            onChange={toggleRelayPolicy.bind(null, i, 'write')}
-                          />
-                          <p>Write</p>
-                        </label>
+                            onCheckedChange={toggleRelayPolicy.bind(
+                              null,
+                              i,
+                              'write'
+                            )}
+                            className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                          >
+                            <Checkbox.Indicator className="text-white">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.5 12.75l6 6 9-13.5"
+                                />
+                              </svg>
+                            </Checkbox.Indicator>
+                          </Checkbox.Root>
+                          <label
+                            htmlFor={`write-${i}`}
+                            className="text-muted font-medium"
+                          >
+                            Write
+                          </label>
+                        </div>
                       </div>
                       <button
                         onClick={removeRelay.bind(null, i)}
@@ -317,15 +372,34 @@ function Options() {
             </Tabs.Content>
           </Tabs.Root>
           <div className="mb-3">
-            <label className="flex gap-2 items-center">
-              <input
-                type="checkbox"
+            <div className="flex items-center gap-2">
+              <Checkbox.Root
+                id="notification"
+                className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
                 checked={showNotifications}
-                onChange={handleNotifications}
-                className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
-              />
-              Show desktop notifications when a permissions has been used
-            </label>
+                onCheckedChange={handleNotifications}
+              >
+                <Checkbox.Indicator className="text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+              <label htmlFor="notification">
+                Show desktop notifications when a permissions has been used
+              </label>
+            </div>
           </div>
           <div>
             <details>
@@ -349,47 +423,48 @@ function Options() {
                 </div>
               </summary>
               <div className="mt-3">
-                <label className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
+                <div className="flex items-center gap-2">
+                  <Checkbox.Root
+                    id="notification"
+                    className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
                     checked={handleNostrLinks}
-                    onChange={changeHandleNostrLinks}
-                    className="w-6 h-6 rounded-md border border-gray-200 dark:border-gray-800 appearance-none"
-                  />
-                  Handle nostr links
-                </label>
-              </div>
-            </details>
-          </div>
-          {/*<div>
-          <label style={{display: 'flex', alignItems: 'center'}}>
-            <div>
-              handle{' '}
-              <span style={{padding: '2px', background: 'silver'}}>nostr:</span>{' '}
-              links:
-            </div>
-            <input
-              type="checkbox"
-              checked={handleNostrLinks}
-              onChange={changeHandleNostrLinks}
-            />
-          </label>
-          <div style={{marginLeft: '10px'}}>
-            {handleNostrLinks && (
-              <div>
-                <div style={{display: 'flex'}}>
-                  <input
-                    placeholder="url template"
-                    value={protocolHandler}
-                    onChange={handleChangeProtocolHandler}
-                    style={{width: '680px', maxWidth: '90%'}}
-                  />
-                  {!showProtocolHandlerHelp && (
-                    <button onClick={changeShowProtocolHandlerHelp}>?</button>
-                  )}
+                    onCheckedChange={changeHandleNostrLinks}
+                  >
+                    <Checkbox.Indicator className="text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                    </Checkbox.Indicator>
+                  </Checkbox.Root>
+                  <label htmlFor="notification">Handle nostr links</label>
                 </div>
-                {showProtocolHandlerHelp && (
-                  <pre>{`
+                {handleNostrLinks && (
+                  <div className="mt-3">
+                    <div className="flex">
+                      <input
+                        placeholder="url template"
+                        value={protocolHandler}
+                        onChange={handleChangeProtocolHandler}
+                      />
+                      {!showProtocolHandlerHelp && (
+                        <button onClick={changeShowProtocolHandlerHelp}>
+                          ?
+                        </button>
+                      )}
+                    </div>
+                    {showProtocolHandlerHelp && (
+                      <pre className="bg-muted p-2 rounded-xl break-all">{`
     {raw} = anything after the colon, i.e. the full nip19 bech32 string
     {hex} = hex pubkey for npub or nprofile, hex event id for note or nevent
     {p_or_e} = "p" for npub or nprofile, "e" for note or nevent
@@ -404,16 +479,12 @@ function Options() {
       - https://snort.social/{raw}
       - https://nostr.band/{raw}
                 `}</pre>
+                    )}
+                  </div>
                 )}
               </div>
-            )}
+            </details>
           </div>
-        </div>*/}
-          {/*<div style={{fontSize: '120%'}}>
-          {messages.map((message, i) => (
-            <div key={i}>{message}</div>
-          ))}
-        </div>*/}
         </div>
         <button
           disabled={!unsavedChanges.length}

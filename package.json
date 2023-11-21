@@ -1,6 +1,7 @@
 {
   "license": "WTFPL",
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-tabs": "^1.0.4",
     "async-mutex": "^0.3.2",
     "esbuild": "^0.14.54",

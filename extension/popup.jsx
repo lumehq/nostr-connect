@@ -1,23 +1,21 @@
 import browser from 'webextension-polyfill'
 import {render} from 'react-dom'
 import {getPublicKey, nip19} from 'nostr-tools'
-import React, {useState, useMemo, useRef, useEffect} from 'react'
+import React, {useState, useMemo, useEffect} from 'react'
 import QRCode from 'react-qr-code'
 import {SettingsIcon} from './icons'
 import {minidenticon} from 'minidenticons'
 import * as Tabs from '@radix-ui/react-tabs'
 
 function Popup() {
-  let [pubKey, setPubKey] = useState('')
-
-  let keys = useRef({npub: '', hex: '', nprofile: ''})
+  let [keys, setKeys] = useState(null)
   let avatarURI = useMemo(
     () =>
-      pubKey
+      keys
         ? 'data:image/svg+xml;utf8,' +
-          encodeURIComponent(minidenticon(pubKey, 90, 30))
+          encodeURIComponent(minidenticon(keys.npub, 90, 30))
         : null,
-    [pubKey]
+    [keys]
   )
 
   const gotoSettings = () => {
@@ -32,10 +30,7 @@ function Popup() {
         let hexKey = getPublicKey(results.private_key)
         let npubKey = nip19.npubEncode(hexKey)
 
-        setPubKey(npubKey)
-
-        keys.current.npub = npubKey
-        keys.current.hex = hexKey
+        setKeys({npub: npubKey, hex: hexKey})
 
         if (results.relays) {
           let relaysList = []
@@ -50,18 +45,18 @@ function Popup() {
               pubkey: hexKey,
               relays: relaysList
             })
-            keys.current.nprofile = nprofileKey
+            setKeys(prev => ({...prev, nprofile: nprofileKey}))
           }
         }
       } else {
-        setPubKey(null)
+        setKeys(null)
       }
     })
   }, [])
 
   return (
     <div className="w-[320px] p-6">
-      {!pubKey ? (
+      {!keys ? (
         <div className="flex items-center justify-between gap-6">
           <div className="flex-1 flex items-center justify-between">
             <p className="text-sm font-medium">
@@ -129,31 +124,53 @@ function Popup() {
                 >
                   hex
                 </Tabs.Trigger>
-                <Tabs.Trigger
-                  value="nprofile"
-                  className="font-medium flex-1 flex items-center justify-center text-muted h-10 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
-                >
-                  naddr
-                </Tabs.Trigger>
+                {keys.nprofile ? (
+                  <Tabs.Trigger
+                    value="nprofile"
+                    className="font-medium flex-1 flex items-center justify-center text-muted h-10 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
+                  >
+                    nprofile
+                  </Tabs.Trigger>
+                ) : null}
               </Tabs.List>
               <Tabs.Content value="npub">
                 <div className="my-4">
                   <textarea
+                    value={keys.npub}
                     readOnly
                     className="w-full h-20 resize-none p-3 bg-muted rounded-xl"
-                  >
-                    {pubKey}
-                  </textarea>
-                </div>
-                <div className="w-full rounded-xl border border-primary p-4 flex items-center justify-center">
-                  <QRCode
-                    size={128}
-                    value={
-                      pubKey.startsWith('n') ? pubKey.toUpperCase() : pubKey
-                    }
                   />
                 </div>
+                <div className="w-full rounded-xl border border-primary p-4 flex items-center justify-center">
+                  <QRCode size={128} value={keys.npub} />
+                </div>
               </Tabs.Content>
+              <Tabs.Content value="hex">
+                <div className="my-4">
+                  <textarea
+                    value={keys.hex}
+                    readOnly
+                    className="w-full h-20 resize-none p-3 bg-muted rounded-xl"
+                  />
+                </div>
+                <div className="w-full rounded-xl border border-primary p-4 flex items-center justify-center">
+                  <QRCode size={128} value={keys.hex} />
+                </div>
+              </Tabs.Content>
+              {keys.nprofile ? (
+                <Tabs.Content value="nprofile">
+                  <div className="my-4">
+                    <textarea
+                      value={keys.nprofile}
+                      readOnly
+                      className="w-full h-20 resize-none p-3 bg-muted rounded-xl"
+                    />
+                  </div>
+                  <div className="w-full rounded-xl border border-primary p-4 flex items-center justify-center">
+                    <QRCode size={128} value={keys.nprofile} />
+                  </div>
+                </Tabs.Content>
+              ) : null}
             </Tabs.Root>
           </div>
         </div>
