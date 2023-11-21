@@ -130,8 +130,8 @@ async function handleContentScriptMessage({type, params, host}) {
           browser.windows.create({
             url: `${browser.runtime.getURL('prompt.html')}?${qs.toString()}`,
             type: 'popup',
-            width: 340,
-            height: 360
+            width: 600,
+            height: 600
           })
         })
 

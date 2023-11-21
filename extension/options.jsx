@@ -3,8 +3,10 @@ import React, {useState, useCallback, useEffect} from 'react'
 import {render} from 'react-dom'
 import {generatePrivateKey, nip19} from 'nostr-tools'
 import QRCode from 'react-qr-code'
-
+import * as Tabs from '@radix-ui/react-tabs'
+import {LogoIcon} from './icons'
 import {removePermissions} from './common'
+import * as Checkbox from '@radix-ui/react-checkbox'
 
 function Options() {
   let [privKey, setPrivKey] = useState('')
@@ -79,252 +81,420 @@ function Options() {
   }
 
   return (
-    <>
-      <h1 style={{fontSize: '25px', marginBlockEnd: '0px'}}>nos2x</h1>
-      <p style={{marginBlockStart: '0px'}}>nostr signer extension</p>
-      <h2 style={{marginBlockStart: '20px', marginBlockEnd: '5px'}}>options</h2>
-      <div
-        style={{
-          marginBottom: '10px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
-          width: 'fit-content'
-        }}
-      >
-        <div>
-          <div>private key:&nbsp;</div>
-          <div
-            style={{
-              marginLeft: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '10px'
-            }}
-          >
-            <div style={{display: 'flex', gap: '10px'}}>
-              <input
-                type={hidingPrivateKey ? 'password' : 'text'}
-                style={{width: '600px'}}
-                value={privKey}
-                onChange={handleKeyChange}
-              />
-              {privKey === '' && <button onClick={generate}>generate</button>}
-              {privKey && hidingPrivateKey && (
-                <button onClick={() => hidePrivateKey(false)}>show key</button>
-              )}
-              {privKey && !hidingPrivateKey && (
-                <button onClick={() => hidePrivateKey(true)}>hide key</button>
-              )}
-            </div>
-            {privKey && !isKeyValid() && (
-              <div style={{color: 'red'}}>private key is invalid!</div>
-            )}
-            {!hidingPrivateKey && isKeyValid() && (
-              <div
-                style={{
-                  height: 'auto',
-                  maxWidth: 256,
-                  width: '100%',
-                  marginTop: '5px'
-                }}
-              >
-                <QRCode
-                  size={256}
-                  style={{height: 'auto', maxWidth: '100%', width: '100%'}}
-                  value={privKey.toUpperCase()}
-                  viewBox={`0 0 256 256`}
-                />
-              </div>
-            )}
+    <div className="w-screen h-screen flex flex-col items-center justify-center">
+      <div className="p-8 shadow-primary border border-primary rounded-2xl max-w-xl mx-auto flex flex-col gap-4">
+        <div className="flex items-center gap-4">
+          <LogoIcon />
+          <div>
+            <h1 className="text-lg font-semibold">Nostr Connect</h1>
+            <p className="text-sm text-muted font-medium">Nostr signer</p>
           </div>
         </div>
-        <div>
-          <div>preferred relays:</div>
-          <div
-            style={{
-              marginLeft: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1px'
-            }}
-          >
-            {relays.map(({url, policy}, i) => (
-              <div
-                key={i}
-                style={{display: 'flex', alignItems: 'center', gap: '15px'}}
-              >
-                <input
-                  style={{width: '400px'}}
-                  value={url}
-                  onChange={changeRelayURL.bind(null, i)}
-                />
-                <div style={{display: 'flex', gap: '5px'}}>
-                  <label style={{display: 'flex', alignItems: 'center'}}>
-                    read
-                    <input
-                      type="checkbox"
-                      checked={policy.read}
-                      onChange={toggleRelayPolicy.bind(null, i, 'read')}
-                    />
-                  </label>
-                  <label style={{display: 'flex', alignItems: 'center'}}>
-                    write
-                    <input
-                      type="checkbox"
-                      checked={policy.write}
-                      onChange={toggleRelayPolicy.bind(null, i, 'write')}
-                    />
-                  </label>
-                </div>
-                <button onClick={removeRelay.bind(null, i)}>remove</button>
-              </div>
-            ))}
-            <div style={{display: 'flex', gap: '10px', marginTop: '5px'}}>
-              <input
-                style={{width: '400px'}}
-                value={newRelayURL}
-                onChange={e => setNewRelayURL(e.target.value)}
-                onKeyDown={e => {
-                  if (e.key === 'Enter') addNewRelay()
-                }}
-              />
-              <button disabled={!newRelayURL} onClick={addNewRelay}>
-                add relay
-              </button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label style={{display: 'flex', alignItems: 'center'}}>
+        <div className="flex flex-col">
+          <div className="mb-4 flex flex-col gap-2">
+            <div className="font-semibold text-base">Private key:</div>
             <div>
-              handle{' '}
-              <span style={{padding: '2px', background: 'silver'}}>nostr:</span>{' '}
-              links:
-            </div>
-            <input
-              type="checkbox"
-              checked={handleNostrLinks}
-              onChange={changeHandleNostrLinks}
-            />
-          </label>
-          <div style={{marginLeft: '10px'}}>
-            {handleNostrLinks && (
-              <div>
-                <div style={{display: 'flex'}}>
-                  <input
-                    placeholder="url template"
-                    value={protocolHandler}
-                    onChange={handleChangeProtocolHandler}
-                    style={{width: '680px', maxWidth: '90%'}}
-                  />
-                  {!showProtocolHandlerHelp && (
-                    <button onClick={changeShowProtocolHandlerHelp}>?</button>
+              <div className="flex gap-2">
+                <input
+                  type={hidingPrivateKey ? 'password' : 'text'}
+                  value={privKey}
+                  onChange={handleKeyChange}
+                  className="flex-1 h-9 bg-transparent border border-primary px-3 py-1 rounded-lg"
+                />
+                <div className="shrink-0">
+                  {!privKey && (
+                    <button
+                      type="button"
+                      onClick={generate}
+                      className="px-3 h-9 font-semibold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Generate
+                    </button>
+                  )}
+                  {privKey && hidingPrivateKey && (
+                    <button
+                      type="button"
+                      onClick={() => hidePrivateKey(false)}
+                      className="px-3 h-9 font-bold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Show key
+                    </button>
+                  )}
+                  {privKey && !hidingPrivateKey && (
+                    <button
+                      type="button"
+                      onClick={() => hidePrivateKey(true)}
+                      className="px-3 h-9 font-bold border w-24 border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Hide key
+                    </button>
                   )}
                 </div>
-                {showProtocolHandlerHelp && (
-                  <pre>{`
-    {raw} = anything after the colon, i.e. the full nip19 bech32 string
-    {hex} = hex pubkey for npub or nprofile, hex event id for note or nevent
-    {p_or_e} = "p" for npub or nprofile, "e" for note or nevent
-    {u_or_n} = "u" for npub or nprofile, "n" for note or nevent
-    {relay0} = first relay in a nprofile or nevent
-    {relay1} = second relay in a nprofile or nevent
-    {relay2} = third relay in a nprofile or nevent
-    {hrp} = human-readable prefix of the nip19 string
-
-    examples:
-      - https://njump.me/{raw}
-      - https://snort.social/{raw}
-      - https://nostr.band/{raw}
-                `}</pre>
+              </div>
+              <div className="mt-1 text-sm">
+                {privKey && !isKeyValid() ? (
+                  <p className="text-red-500">Private key is invalid!</p>
+                ) : (
+                  <p className="text-gray-500">
+                    Your key is stored locally. The developer has no way of
+                    seeing your keys.
+                  </p>
                 )}
               </div>
-            )}
+              {!hidingPrivateKey && isKeyValid() && (
+                <div className="mt-5 flex flex-col items-center">
+                  <QRCode
+                    size={256}
+                    value={privKey.toUpperCase()}
+                    viewBox={`0 0 256 256`}
+                    className="w-full max-w-full"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <Tabs.Root className="mb-4" defaultValue="relays">
+            <Tabs.List className="mb-4 w-full border-b border-primary h-11 flex items-center gap-6">
+              <Tabs.Trigger
+                className="font-medium flex items-center text-muted gap-2 h-11 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
+                value="relays"
+              >
+                Relays
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted data-[state=active]:text-primary rounded-full">
+                  {relays.length}
+                </span>
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                className="font-medium flex items-center text-muted gap-2 h-11 data-[state=active]:text-primary data-[state=active]:border-b data-[state=active]:border-secondary"
+                value="permissions"
+              >
+                Permissions
+                <span className="px-3 h-6 inline-flex items-center justify-center bg-muted data-[state=active]:text-primary rounded-full">
+                  {policies.length}
+                </span>
+              </Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="relays">
+              <div className="flex flex-col gap-2">
+                <div className="font-semibold text-base">Preferred Relays:</div>
+                <div className="flex flex-col gap-2">
+                  {relays.map(({url, policy}, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <input
+                        value={url}
+                        onChange={changeRelayURL.bind(null, i)}
+                        className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
+                      />
+                      <div className="flex items-center gap-2">
+                        <div className="inline-flex items-center gap-2">
+                          <Checkbox.Root
+                            id={`read-${i}`}
+                            checked={policy.read}
+                            onCheckedChange={toggleRelayPolicy.bind(
+                              null,
+                              i,
+                              'read'
+                            )}
+                            className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                          >
+                            <Checkbox.Indicator className="text-white">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.5 12.75l6 6 9-13.5"
+                                />
+                              </svg>
+                            </Checkbox.Indicator>
+                          </Checkbox.Root>
+                          <label
+                            htmlFor={`read-${i}`}
+                            className="text-muted font-medium"
+                          >
+                            Read
+                          </label>
+                        </div>
+                        <div className="inline-flex items-center gap-2">
+                          <Checkbox.Root
+                            id={`write-${i}`}
+                            checked={policy.write}
+                            onCheckedChange={toggleRelayPolicy.bind(
+                              null,
+                              i,
+                              'write'
+                            )}
+                            className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                          >
+                            <Checkbox.Indicator className="text-white">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.5 12.75l6 6 9-13.5"
+                                />
+                              </svg>
+                            </Checkbox.Indicator>
+                          </Checkbox.Root>
+                          <label
+                            htmlFor={`write-${i}`}
+                            className="text-muted font-medium"
+                          >
+                            Write
+                          </label>
+                        </div>
+                      </div>
+                      <button
+                        onClick={removeRelay.bind(null, i)}
+                        className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                  <div className="flex gap-2">
+                    <input
+                      value={newRelayURL}
+                      onChange={e => setNewRelayURL(e.target.value)}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter') addNewRelay()
+                      }}
+                      placeholder="wss://"
+                      className="flex-1 h-9 bg-transparent border px-3 py-1 border-primary rounded-lg placeholder:text-muted"
+                    />
+                    <button
+                      disabled={!newRelayURL}
+                      onClick={addNewRelay}
+                      className="shrink-0 px-3 w-24 h-9 font-semibold border border-primary shadow-sm rounded-lg inline-flex items-center justify-center disabled:text-muted"
+                    >
+                      Add Relay
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Tabs.Content>
+            <Tabs.Content value="permissions">
+              <div className="flex flex-col gap-2">
+                <div className="font-semibold text-base">Permissions:</div>
+                {!policies.length ? (
+                  <div className="text-muted">
+                    You haven't granted any permissions to any apps yet
+                  </div>
+                ) : (
+                  <table className="table-auto">
+                    <thead>
+                      <tr className="mb-2">
+                        <th className="text-left border-b-8 border-transparent">
+                          Domain
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Permission
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Answer
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Conditions
+                        </th>
+                        <th className="text-left border-b-8 border-transparent">
+                          Since
+                        </th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {policies.map(
+                        ({host, type, accept, conditions, created_at}) => (
+                          <tr
+                            key={
+                              host + type + accept + JSON.stringify(conditions)
+                            }
+                          >
+                            <td className="font-semibold">{host}</td>
+                            <td className="text-muted">{type}</td>
+                            <td className="text-muted">
+                              {accept === 'true' ? 'allow' : 'deny'}
+                            </td>
+                            <td className="text-muted">
+                              {conditions.kinds
+                                ? `kinds: ${Object.keys(conditions.kinds).join(
+                                    ', '
+                                  )}`
+                                : 'always'}
+                            </td>
+                            <td className="text-muted">
+                              {new Date(created_at * 1000)
+                                .toISOString()
+                                .split('.')[0]
+                                .split('T')
+                                .join(' ')}
+                            </td>
+                            <td>
+                              <button
+                                onClick={handleRevoke}
+                                data-host={host}
+                                data-accept={accept}
+                                data-type={type}
+                                className="text-primary font-semibold"
+                              >
+                                Revoke
+                              </button>
+                            </td>
+                          </tr>
+                        )
+                      )}
+                      {!policies.length && (
+                        <tr>
+                          {Array(5)
+                            .fill('N/A')
+                            .map((v, i) => (
+                              <td key={i}>{v}</td>
+                            ))}
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </Tabs.Content>
+          </Tabs.Root>
+          <div className="mb-3">
+            <div className="flex items-center gap-2">
+              <Checkbox.Root
+                id="notification"
+                className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                checked={showNotifications}
+                onCheckedChange={handleNotifications}
+              >
+                <Checkbox.Indicator className="text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+              <label htmlFor="notification">
+                Show desktop notifications when a permissions has been used
+              </label>
+            </div>
+          </div>
+          <div>
+            <details>
+              <summary className="flex items-center justify-between">
+                <div className="font-semibold text-base">Advanced</div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </div>
+              </summary>
+              <div className="mt-3">
+                <div className="flex items-center gap-2">
+                  <Checkbox.Root
+                    id="nostrlink"
+                    className="flex h-6 w-6 appearance-none items-center justify-center rounded-lg bg-white outline-none border border-primary data-[state=checked]:bg-primary data-[state=checked]:border-secondary"
+                    checked={handleNostrLinks}
+                    onCheckedChange={changeHandleNostrLinks}
+                  >
+                    <Checkbox.Indicator className="text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                    </Checkbox.Indicator>
+                  </Checkbox.Root>
+                  <label htmlFor="nostrlink">Handle nostr links</label>
+                </div>
+                {handleNostrLinks && (
+                  <div className="mt-3">
+                    <div className="flex">
+                      <input
+                        placeholder="url template"
+                        value={protocolHandler}
+                        onChange={handleChangeProtocolHandler}
+                      />
+                      {!showProtocolHandlerHelp && (
+                        <button onClick={changeShowProtocolHandlerHelp}>
+                          ?
+                        </button>
+                      )}
+                    </div>
+                    {showProtocolHandlerHelp && (
+                      <pre className="bg-muted px-2 rounded-xl overflow-scroll">{`
+{raw} = anything after the colon, i.e. the full nip19 bech32 string
+{hex} = hex pubkey for npub or nprofile, hex event id for note or nevent
+{p_or_e} = "p" for npub or nprofile, "e" for note or nevent
+{u_or_n} = "u" for npub or nprofile, "n" for note or nevent
+{relay0} = first relay in a nprofile or nevent
+{relay1} = second relay in a nprofile or nevent
+{relay2} = third relay in a nprofile or nevent
+{hrp} = human-readable prefix of the nip19 string
+
+examples:
+  - https://njump.me/{raw}
+  - https://snort.social/{raw}
+  - https://nostr.band/{raw}
+                `}</pre>
+                    )}
+                  </div>
+                )}
+              </div>
+            </details>
           </div>
         </div>
-        <label style={{display: 'flex', alignItems: 'center'}}>
-          show notifications when permissions are used:
-          <input
-            type="checkbox"
-            checked={showNotifications}
-            onChange={handleNotifications}
-          />
-        </label>
         <button
           disabled={!unsavedChanges.length}
           onClick={saveChanges}
-          style={{padding: '5px 20px'}}
+          className="w-full h-10 bg-primary rounded-xl font-bold inline-flex items-center justify-center text-white disabled:cursor-not-allowed disabled:opacity-70 transform active:translate-y-1 transition-transform ease-in-out duration-75"
         >
-          save
+          Save
         </button>
-        <div style={{fontSize: '120%'}}>
-          {messages.map((message, i) => (
-            <div key={i}>{message}</div>
-          ))}
-        </div>
       </div>
-      <div>
-        <h2>permissions</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>domain</th>
-              <th>permission</th>
-              <th>answer</th>
-              <th>conditions</th>
-              <th>since</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {policies.map(({host, type, accept, conditions, created_at}) => (
-              <tr key={host + type + accept + JSON.stringify(conditions)}>
-                <td>{host}</td>
-                <td>{type}</td>
-                <td>{accept === 'true' ? 'allow' : 'deny'}</td>
-                <td>
-                  {conditions.kinds
-                    ? `kinds: ${Object.keys(conditions.kinds).join(', ')}`
-                    : 'always'}
-                </td>
-                <td>
-                  {new Date(created_at * 1000)
-                    .toISOString()
-                    .split('.')[0]
-                    .split('T')
-                    .join(' ')}
-                </td>
-                <td>
-                  <button
-                    onClick={handleRevoke}
-                    data-host={host}
-                    data-accept={accept}
-                    data-type={type}
-                  >
-                    revoke
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {!policies.length && (
-              <tr>
-                {Array(5)
-                  .fill('N/A')
-                  .map((v, i) => (
-                    <td key={i}>{v}</td>
-                  ))}
-              </tr>
-            )}
-          </tbody>
-        </table>
-        {!policies.length && (
-          <div style={{marginTop: '5px'}}>
-            no permissions have been granted yet
-          </div>
-        )}
-      </div>
-    </>
+    </div>
   )
 
   async function handleKeyChange(e) {
@@ -399,6 +569,7 @@ function Options() {
 
   function addNewRelay() {
     if (newRelayURL.trim() === '') return
+    if (!newRelayURL.startsWith('wss://')) return
     relays.push({
       url: newRelayURL,
       policy: {read: true, write: true}

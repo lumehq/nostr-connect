@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.data-\[state\=active\]\:text-primary[data-state=active] > .bg-muted {
+  @apply bg-secondary
+}
