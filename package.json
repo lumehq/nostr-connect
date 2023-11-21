@@ -22,8 +22,8 @@
   },
   "scripts": {
     "dev": "./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css --watch",
-    "build": "./build.js prod",
-    "package": "./build.js prod; cd extension; zip -r archive *; cd ..; mv extension/archive.zip ./nos2x.zip"
+    "build": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css; ./build.js prod",
+    "package": "./build.js prod; cd extension; zip -r archive *; cd ..; mv extension/archive.zip ./nostrconnect.zip"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.5"
