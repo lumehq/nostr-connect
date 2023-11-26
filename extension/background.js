@@ -126,13 +126,23 @@ async function handleContentScriptMessage({type, params, host}) {
         // prompt will be resolved with true or false
         let accept = await new Promise((resolve, reject) => {
           openPrompt = {resolve, reject}
+          const url = `${browser.runtime.getURL(
+            'prompt.html'
+          )}?${qs.toString()}`
 
-          browser.windows.create({
-            url: `${browser.runtime.getURL('prompt.html')}?${qs.toString()}`,
-            type: 'popup',
-            width: 600,
-            height: 600
-          })
+          if (browser.windows) {
+            browser.windows.create({
+              url,
+              type: 'popup',
+              width: 600,
+              height: 600
+            })
+          } else {
+            browser.tabs.create({
+              url,
+              active: true
+            })
+          }
         })
 
         // denied, stop here
@@ -205,6 +215,11 @@ async function handlePromptMessage({host, type, accept, conditions}, sender) {
 
   // close prompt
   if (sender) {
-    browser.windows.remove(sender.tab.windowId)
+    if (browser.windows) {
+      browser.windows.remove(sender.tab.windowId)
+    } else {
+      // Android Firefox
+      browser.tabs.remove(sender.tab.id)
+    }
   }
 }

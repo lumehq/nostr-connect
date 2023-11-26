@@ -1,5 +1,7 @@
 import browser from 'webextension-polyfill'
 
+const EXTENSION = 'nostrconnect'
+
 // inject the script that will provide window.nostr
 let script = document.createElement('script')
 script.setAttribute('async', 'false')
@@ -12,7 +14,7 @@ window.addEventListener('message', async message => {
   if (message.source !== window) return
   if (!message.data) return
   if (!message.data.params) return
-  if (message.data.ext !== 'nos2x') return
+  if (message.data.ext !== EXTENSION) return
 
   // pass on to background
   var response
@@ -28,7 +30,7 @@ window.addEventListener('message', async message => {
 
   // return response
   window.postMessage(
-    {id: message.data.id, ext: 'nos2x', response},
+    {id: message.data.id, ext: EXTENSION, response},
     message.origin
   )
 })
