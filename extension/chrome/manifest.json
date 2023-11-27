@@ -12,7 +12,7 @@
   },
   "options_page": "options.html",
   "background": {
-    "service_worker": "/build/background.build.js"
+    "service_worker": "/background.build.js"
   },
   "action": {
     "default_title": "Nostr Connect",
@@ -21,7 +21,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["/build/content-script.build.js"],
+      "js": ["/content-script.build.js"],
       "all_frames": true
     }
   ],

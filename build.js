@@ -35,6 +35,10 @@ esbuild
           {
             from: ['./extension/*.html'],
             to: ['./']
+          },
+          {
+            from: ['./extension/icons/*'],
+            to: ['./icons']
           }
         ]
       })
