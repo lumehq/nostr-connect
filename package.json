@@ -23,9 +23,11 @@
   "scripts": {
     "dev": "./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css --watch",
     "build": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css; ./build.js prod",
-    "package": "./build.js prod; cd extension; zip -r archive *; cd ..; mv extension/archive.zip ./nostrconnect.zip"
+    "package:chrome": "./build.js prod; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_chrome.zip",
+    "package:firefox": "./build.js prod firefox; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_firefox.xpi"
   },
   "devDependencies": {
+    "esbuild-plugin-copy": "^2.1.1",
     "tailwindcss": "^3.3.5"
   }
 }

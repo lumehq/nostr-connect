@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-
+const {copy} = require('esbuild-plugin-copy')
 const esbuild = require('esbuild')
 
-const prod = process.argv.indexOf('prod') !== -1
+const isProd = process.argv.indexOf('prod') !== -1
+const isFirefox = process.argv.indexOf('firefox') !== -1
 
 esbuild
   .build({
@@ -14,12 +15,30 @@ esbuild
       'background.build': './extension/background.js',
       'content-script.build': './extension/content-script.js'
     },
-    outdir: './extension/build',
-    sourcemap: prod ? false : 'inline',
+    outdir: './extension/output',
+    sourcemap: isProd ? false : 'inline',
     define: {
       window: 'self',
       global: 'self'
     },
-    watch: !prod
+    plugins: [
+      copy({
+        assets: [
+          {
+            from: [
+              isFirefox
+                ? './extension/firefox/manifest.json'
+                : './extension/chrome/manifest.json'
+            ],
+            to: ['./']
+          },
+          {
+            from: ['./extension/*.html'],
+            to: ['./']
+          }
+        ]
+      })
+    ]
   })
-  .then(() => console.log('build success.'))
+  .then(() => console.log('Build success.'))
+  .catch(err => console.error('Build error.', err))

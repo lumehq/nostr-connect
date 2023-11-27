@@ -1,9 +1,14 @@
 {
   "name": "Nostr Connect",
   "description": "Nostr Signer Extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage_url": "https://github.com/reyamir/nostr-connect",
   "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{e665d138-0e5b-4b7a-ab91-7af834eda7a2}"
+    }
+  },
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
@@ -12,7 +17,7 @@
   },
   "options_page": "options.html",
   "background": {
-    "service_worker": "/build/background.build.js"
+    "scripts": ["/build/background.build.js"]
   },
   "action": {
     "default_title": "Nostr Connect",
@@ -30,7 +35,7 @@
   "web_accessible_resources": [
     {
       "resources": ["nostr-provider.js"],
-      "matches": ["https://*/*", "http://localhost:*/*"]
+      "matches": ["<all_urls>"]
     }
   ]
 }

@@ -1,4 +1,10 @@
 node_modules
 *.build.js
 *.zip
-/extension/build/style.css
+*.xpi
+/extension/releases/*.zip
+/extension/releases/*.xpi
+/extension/output/*.js
+/extension/output/*.html
+/extension/output/*.css
+/extension/output/*.json
