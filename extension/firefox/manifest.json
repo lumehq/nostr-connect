@@ -3,7 +3,7 @@
   "description": "Nostr Signer Extension",
   "version": "0.1.1",
   "homepage_url": "https://github.com/reyamir/nostr-connect",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "browser_specific_settings": {
     "gecko": {
       "id": "{e665d138-0e5b-4b7a-ab91-7af834eda7a2}"
@@ -17,25 +17,19 @@
   },
   "options_page": "options.html",
   "background": {
-    "scripts": ["/background.build.js"]
+    "scripts": ["background.build.js"]
   },
-  "action": {
+  "browser_action": {
     "default_title": "Nostr Connect",
     "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["/content-script.build.js"],
-      "all_frames": true
+      "js": ["content-script.build.js"]
     }
   ],
   "permissions": ["storage"],
   "optional_permissions": ["notifications"],
-  "web_accessible_resources": [
-    {
-      "resources": ["nostr-provider.js"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  "web_accessible_resources": ["nostr-provider.js"]
 }

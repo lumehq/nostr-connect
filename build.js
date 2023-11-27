@@ -37,6 +37,14 @@ esbuild
             to: ['./']
           },
           {
+            from: ['./extension/common.js'],
+            to: ['./']
+          },
+          {
+            from: ['./extension/nostr-provider.js'],
+            to: ['./']
+          },
+          {
             from: ['./extension/icons/*'],
             to: ['./icons']
           }
