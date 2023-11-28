@@ -7,92 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31E701282B148B6300938333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E701272B148B6300938333 /* AppDelegate.swift */; };
-		31E7012A2B148B6300938333 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E701292B148B6300938333 /* SceneDelegate.swift */; };
-		31E7012D2B148B6300938333 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E7012B2B148B6300938333 /* LaunchScreen.storyboard */; };
-		31E701302B148B6300938333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E7012E2B148B6300938333 /* Main.storyboard */; };
-		31E701392B148B6300938333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E701382B148B6300938333 /* AppDelegate.swift */; };
-		31E7013C2B148B6300938333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E7013A2B148B6300938333 /* Main.storyboard */; };
-		31E701442B148B6300938333 /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31E701432B148B6300938333 /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		31E7014E2B148B6300938333 /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31E7014D2B148B6300938333 /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		31E701542B148B6300938333 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701172B148B6200938333 /* Main.html */; };
-		31E701552B148B6300938333 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701172B148B6200938333 /* Main.html */; };
-		31E701562B148B6300938333 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E701192B148B6200938333 /* Icon.png */; };
-		31E701572B148B6300938333 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E701192B148B6200938333 /* Icon.png */; };
-		31E701582B148B6300938333 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011A2B148B6200938333 /* Style.css */; };
-		31E701592B148B6300938333 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011A2B148B6200938333 /* Style.css */; };
-		31E7015A2B148B6300938333 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011B2B148B6200938333 /* Script.js */; };
-		31E7015B2B148B6300938333 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011B2B148B6200938333 /* Script.js */; };
-		31E7015C2B148B6300938333 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7011C2B148B6200938333 /* ViewController.swift */; };
-		31E7015D2B148B6300938333 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7011C2B148B6200938333 /* ViewController.swift */; };
-		31E7015E2B148B6300938333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011D2B148B6300938333 /* Assets.xcassets */; };
-		31E7015F2B148B6300938333 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E7011D2B148B6300938333 /* Assets.xcassets */; };
-		31E701602B148B6300938333 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7011F2B148B6300938333 /* SafariWebExtensionHandler.swift */; };
-		31E701612B148B6300938333 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7011F2B148B6300938333 /* SafariWebExtensionHandler.swift */; };
-		31E701802B148B6300938333 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701732B148B6300938333 /* popup.html */; };
-		31E701812B148B6300938333 /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701742B148B6300938333 /* nostr-provider.js */; };
-		31E701822B148B6300938333 /* options.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701752B148B6300938333 /* options.build.js */; };
-		31E701832B148B6300938333 /* background.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701762B148B6300938333 /* background.build.js */; };
-		31E701842B148B6300938333 /* content-script.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701772B148B6300938333 /* content-script.build.js */; };
-		31E701852B148B6300938333 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 31E701782B148B6300938333 /* icons */; };
-		31E701862B148B6300938333 /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701792B148B6300938333 /* prompt.html */; };
-		31E701872B148B6300938333 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017A2B148B6300938333 /* style.css */; };
-		31E701882B148B6300938333 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017B2B148B6300938333 /* manifest.json */; };
-		31E701892B148B6300938333 /* prompt.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017C2B148B6300938333 /* prompt.build.js */; };
-		31E7018A2B148B6300938333 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017D2B148B6300938333 /* options.html */; };
-		31E7018B2B148B6300938333 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017E2B148B6300938333 /* common.js */; };
-		31E7018C2B148B6300938333 /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017F2B148B6300938333 /* popup.build.js */; };
-		31E7018D2B148B6300938333 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701732B148B6300938333 /* popup.html */; };
-		31E7018E2B148B6300938333 /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701742B148B6300938333 /* nostr-provider.js */; };
-		31E7018F2B148B6300938333 /* options.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701752B148B6300938333 /* options.build.js */; };
-		31E701902B148B6300938333 /* background.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701762B148B6300938333 /* background.build.js */; };
-		31E701912B148B6300938333 /* content-script.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E701772B148B6300938333 /* content-script.build.js */; };
-		31E701922B148B6300938333 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 31E701782B148B6300938333 /* icons */; };
-		31E701932B148B6300938333 /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E701792B148B6300938333 /* prompt.html */; };
-		31E701942B148B6300938333 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017A2B148B6300938333 /* style.css */; };
-		31E701952B148B6300938333 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017B2B148B6300938333 /* manifest.json */; };
-		31E701962B148B6300938333 /* prompt.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017C2B148B6300938333 /* prompt.build.js */; };
-		31E701972B148B6300938333 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017D2B148B6300938333 /* options.html */; };
-		31E701982B148B6300938333 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017E2B148B6300938333 /* common.js */; };
-		31E701992B148B6300938333 /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31E7017F2B148B6300938333 /* popup.build.js */; };
+		31677A052B15715C00E466BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A042B15715C00E466BD /* AppDelegate.swift */; };
+		31677A072B15715C00E466BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A062B15715C00E466BD /* SceneDelegate.swift */; };
+		31677A0A2B15715C00E466BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A082B15715C00E466BD /* LaunchScreen.storyboard */; };
+		31677A0D2B15715C00E466BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A0B2B15715C00E466BD /* Main.storyboard */; };
+		31677A162B15715C00E466BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A152B15715C00E466BD /* AppDelegate.swift */; };
+		31677A192B15715C00E466BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A172B15715C00E466BD /* Main.storyboard */; };
+		31677A212B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31677A202B15715C00E466BD /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		31677A2B2B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		31677A312B15715C00E466BD /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 316779F42B15715B00E466BD /* Main.html */; };
+		31677A322B15715C00E466BD /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 316779F42B15715B00E466BD /* Main.html */; };
+		31677A332B15715C00E466BD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 316779F62B15715B00E466BD /* Icon.png */; };
+		31677A342B15715C00E466BD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 316779F62B15715B00E466BD /* Icon.png */; };
+		31677A352B15715C00E466BD /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 316779F72B15715B00E466BD /* Style.css */; };
+		31677A362B15715C00E466BD /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 316779F72B15715B00E466BD /* Style.css */; };
+		31677A372B15715C00E466BD /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 316779F82B15715B00E466BD /* Script.js */; };
+		31677A382B15715C00E466BD /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 316779F82B15715B00E466BD /* Script.js */; };
+		31677A392B15715C00E466BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779F92B15715B00E466BD /* ViewController.swift */; };
+		31677A3A2B15715C00E466BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779F92B15715B00E466BD /* ViewController.swift */; };
+		31677A3B2B15715C00E466BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316779FA2B15715C00E466BD /* Assets.xcassets */; };
+		31677A3C2B15715C00E466BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316779FA2B15715C00E466BD /* Assets.xcassets */; };
+		31677A3D2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */; };
+		31677A3E2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */; };
+		31677A5D2B15715C00E466BD /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A502B15715C00E466BD /* popup.html */; };
+		31677A5E2B15715C00E466BD /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A512B15715C00E466BD /* nostr-provider.js */; };
+		31677A5F2B15715C00E466BD /* options.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A522B15715C00E466BD /* options.build.js */; };
+		31677A602B15715C00E466BD /* background.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A532B15715C00E466BD /* background.build.js */; };
+		31677A612B15715C00E466BD /* content-script.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A542B15715C00E466BD /* content-script.build.js */; };
+		31677A622B15715C00E466BD /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 31677A552B15715C00E466BD /* icons */; };
+		31677A632B15715C00E466BD /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A562B15715C00E466BD /* prompt.html */; };
+		31677A642B15715C00E466BD /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31677A572B15715C00E466BD /* style.css */; };
+		31677A652B15715C00E466BD /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 31677A582B15715C00E466BD /* manifest.json */; };
+		31677A662B15715C00E466BD /* prompt.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A592B15715C00E466BD /* prompt.build.js */; };
+		31677A672B15715C00E466BD /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5A2B15715C00E466BD /* options.html */; };
+		31677A682B15715C00E466BD /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5B2B15715C00E466BD /* common.js */; };
+		31677A692B15715C00E466BD /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5C2B15715C00E466BD /* popup.build.js */; };
+		31677A6A2B15715C00E466BD /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A502B15715C00E466BD /* popup.html */; };
+		31677A6B2B15715C00E466BD /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A512B15715C00E466BD /* nostr-provider.js */; };
+		31677A6C2B15715C00E466BD /* options.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A522B15715C00E466BD /* options.build.js */; };
+		31677A6D2B15715C00E466BD /* background.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A532B15715C00E466BD /* background.build.js */; };
+		31677A6E2B15715C00E466BD /* content-script.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A542B15715C00E466BD /* content-script.build.js */; };
+		31677A6F2B15715C00E466BD /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 31677A552B15715C00E466BD /* icons */; };
+		31677A702B15715C00E466BD /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A562B15715C00E466BD /* prompt.html */; };
+		31677A712B15715C00E466BD /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31677A572B15715C00E466BD /* style.css */; };
+		31677A722B15715C00E466BD /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 31677A582B15715C00E466BD /* manifest.json */; };
+		31677A732B15715C00E466BD /* prompt.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A592B15715C00E466BD /* prompt.build.js */; };
+		31677A742B15715C00E466BD /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5A2B15715C00E466BD /* options.html */; };
+		31677A752B15715C00E466BD /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5B2B15715C00E466BD /* common.js */; };
+		31677A762B15715C00E466BD /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5C2B15715C00E466BD /* popup.build.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		31E701452B148B6300938333 /* PBXContainerItemProxy */ = {
+		31677A222B15715C00E466BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 31E701112B148B6200938333 /* Project object */;
+			containerPortal = 316779EE2B15715B00E466BD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 31E701422B148B6300938333;
+			remoteGlobalIDString = 31677A1F2B15715C00E466BD;
 			remoteInfo = "Nostr Connect Extension (iOS)";
 		};
-		31E7014F2B148B6300938333 /* PBXContainerItemProxy */ = {
+		31677A2C2B15715C00E466BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 31E701112B148B6200938333 /* Project object */;
+			containerPortal = 316779EE2B15715B00E466BD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 31E7014C2B148B6300938333;
+			remoteGlobalIDString = 31677A292B15715C00E466BD;
 			remoteInfo = "Nostr Connect Extension (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		31E701672B148B6300938333 /* Embed Foundation Extensions */ = {
+		31677A442B15715C00E466BD /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				31E701442B148B6300938333 /* Nostr Connect Extension.appex in Embed Foundation Extensions */,
+				31677A212B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E7016E2B148B6300938333 /* Embed Foundation Extensions */ = {
+		31677A4B2B15715C00E466BD /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				31E7014E2B148B6300938333 /* Nostr Connect Extension.appex in Embed Foundation Extensions */,
+				31677A2B2B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,67 +100,67 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		31E701182B148B6200938333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
-		31E701192B148B6200938333 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		31E7011A2B148B6200938333 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		31E7011B2B148B6200938333 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		31E7011C2B148B6200938333 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		31E7011D2B148B6300938333 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		31E7011F2B148B6300938333 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		31E701242B148B6300938333 /* Nostr Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nostr Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31E701272B148B6300938333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31E701292B148B6300938333 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		31E7012C2B148B6300938333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		31E7012F2B148B6300938333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		31E701312B148B6300938333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31E701362B148B6300938333 /* Nostr Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nostr Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31E701382B148B6300938333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31E7013B2B148B6300938333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		31E7013D2B148B6300938333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31E7013E2B148B6300938333 /* Nostr Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nostr Connect.entitlements"; sourceTree = "<group>"; };
-		31E701432B148B6300938333 /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31E701482B148B6300938333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31E7014D2B148B6300938333 /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31E701522B148B6300938333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31E701532B148B6300938333 /* Nostr Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nostr Connect.entitlements"; sourceTree = "<group>"; };
-		31E701732B148B6300938333 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../extension/output/popup.html; sourceTree = "<group>"; };
-		31E701742B148B6300938333 /* nostr-provider.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "nostr-provider.js"; path = "../../extension/output/nostr-provider.js"; sourceTree = "<group>"; };
-		31E701752B148B6300938333 /* options.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.build.js; path = ../../extension/output/options.build.js; sourceTree = "<group>"; };
-		31E701762B148B6300938333 /* background.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.build.js; path = ../../extension/output/background.build.js; sourceTree = "<group>"; };
-		31E701772B148B6300938333 /* content-script.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "content-script.build.js"; path = "../../extension/output/content-script.build.js"; sourceTree = "<group>"; };
-		31E701782B148B6300938333 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../extension/output/icons; sourceTree = "<group>"; };
-		31E701792B148B6300938333 /* prompt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = prompt.html; path = ../../extension/output/prompt.html; sourceTree = "<group>"; };
-		31E7017A2B148B6300938333 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = style.css; path = ../../extension/output/style.css; sourceTree = "<group>"; };
-		31E7017B2B148B6300938333 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../extension/output/manifest.json; sourceTree = "<group>"; };
-		31E7017C2B148B6300938333 /* prompt.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = prompt.build.js; path = ../../extension/output/prompt.build.js; sourceTree = "<group>"; };
-		31E7017D2B148B6300938333 /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../extension/output/options.html; sourceTree = "<group>"; };
-		31E7017E2B148B6300938333 /* common.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = common.js; path = ../../extension/output/common.js; sourceTree = "<group>"; };
-		31E7017F2B148B6300938333 /* popup.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.build.js; path = ../../extension/output/popup.build.js; sourceTree = "<group>"; };
+		316779F52B15715B00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		316779F62B15715B00E466BD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		316779F72B15715B00E466BD /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		316779F82B15715B00E466BD /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		316779F92B15715B00E466BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		316779FA2B15715C00E466BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		31677A012B15715C00E466BD /* Nostr Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nostr Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31677A042B15715C00E466BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31677A062B15715C00E466BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		31677A092B15715C00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31677A0C2B15715C00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31677A0E2B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31677A132B15715C00E466BD /* Nostr Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nostr Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31677A152B15715C00E466BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31677A182B15715C00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31677A1A2B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31677A1B2B15715C00E466BD /* Nostr Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nostr Connect.entitlements"; sourceTree = "<group>"; };
+		31677A202B15715C00E466BD /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31677A252B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31677A2F2B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31677A302B15715C00E466BD /* Nostr Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nostr Connect.entitlements"; sourceTree = "<group>"; };
+		31677A502B15715C00E466BD /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../extension/output/popup.html; sourceTree = "<group>"; };
+		31677A512B15715C00E466BD /* nostr-provider.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "nostr-provider.js"; path = "../../extension/output/nostr-provider.js"; sourceTree = "<group>"; };
+		31677A522B15715C00E466BD /* options.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.build.js; path = ../../extension/output/options.build.js; sourceTree = "<group>"; };
+		31677A532B15715C00E466BD /* background.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.build.js; path = ../../extension/output/background.build.js; sourceTree = "<group>"; };
+		31677A542B15715C00E466BD /* content-script.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "content-script.build.js"; path = "../../extension/output/content-script.build.js"; sourceTree = "<group>"; };
+		31677A552B15715C00E466BD /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../extension/output/icons; sourceTree = "<group>"; };
+		31677A562B15715C00E466BD /* prompt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = prompt.html; path = ../../extension/output/prompt.html; sourceTree = "<group>"; };
+		31677A572B15715C00E466BD /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = style.css; path = ../../extension/output/style.css; sourceTree = "<group>"; };
+		31677A582B15715C00E466BD /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../extension/output/manifest.json; sourceTree = "<group>"; };
+		31677A592B15715C00E466BD /* prompt.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = prompt.build.js; path = ../../extension/output/prompt.build.js; sourceTree = "<group>"; };
+		31677A5A2B15715C00E466BD /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../extension/output/options.html; sourceTree = "<group>"; };
+		31677A5B2B15715C00E466BD /* common.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = common.js; path = ../../extension/output/common.js; sourceTree = "<group>"; };
+		31677A5C2B15715C00E466BD /* popup.build.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.build.js; path = ../../extension/output/popup.build.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		31E701212B148B6300938333 /* Frameworks */ = {
+		316779FE2B15715C00E466BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701332B148B6300938333 /* Frameworks */ = {
+		31677A102B15715C00E466BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701402B148B6300938333 /* Frameworks */ = {
+		31677A1D2B15715C00E466BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E7014A2B148B6300938333 /* Frameworks */ = {
+		31677A272B15715C00E466BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -170,116 +170,116 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31E701102B148B6200938333 = {
+		316779ED2B15715B00E466BD = {
 			isa = PBXGroup;
 			children = (
-				31E701152B148B6200938333 /* Shared (App) */,
-				31E7011E2B148B6300938333 /* Shared (Extension) */,
-				31E701262B148B6300938333 /* iOS (App) */,
-				31E701372B148B6300938333 /* macOS (App) */,
-				31E701472B148B6300938333 /* iOS (Extension) */,
-				31E701512B148B6300938333 /* macOS (Extension) */,
-				31E701252B148B6300938333 /* Products */,
+				316779F22B15715B00E466BD /* Shared (App) */,
+				316779FB2B15715C00E466BD /* Shared (Extension) */,
+				31677A032B15715C00E466BD /* iOS (App) */,
+				31677A142B15715C00E466BD /* macOS (App) */,
+				31677A242B15715C00E466BD /* iOS (Extension) */,
+				31677A2E2B15715C00E466BD /* macOS (Extension) */,
+				31677A022B15715C00E466BD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		31E701152B148B6200938333 /* Shared (App) */ = {
+		316779F22B15715B00E466BD /* Shared (App) */ = {
 			isa = PBXGroup;
 			children = (
-				31E7011C2B148B6200938333 /* ViewController.swift */,
-				31E7011D2B148B6300938333 /* Assets.xcassets */,
-				31E701162B148B6200938333 /* Resources */,
+				316779F92B15715B00E466BD /* ViewController.swift */,
+				316779FA2B15715C00E466BD /* Assets.xcassets */,
+				316779F32B15715B00E466BD /* Resources */,
 			);
 			path = "Shared (App)";
 			sourceTree = "<group>";
 		};
-		31E701162B148B6200938333 /* Resources */ = {
+		316779F32B15715B00E466BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				31E701172B148B6200938333 /* Main.html */,
-				31E701192B148B6200938333 /* Icon.png */,
-				31E7011A2B148B6200938333 /* Style.css */,
-				31E7011B2B148B6200938333 /* Script.js */,
+				316779F42B15715B00E466BD /* Main.html */,
+				316779F62B15715B00E466BD /* Icon.png */,
+				316779F72B15715B00E466BD /* Style.css */,
+				316779F82B15715B00E466BD /* Script.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		31E7011E2B148B6300938333 /* Shared (Extension) */ = {
+		316779FB2B15715C00E466BD /* Shared (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				31E701722B148B6300938333 /* Resources */,
-				31E7011F2B148B6300938333 /* SafariWebExtensionHandler.swift */,
+				31677A4F2B15715C00E466BD /* Resources */,
+				316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */,
 			);
 			path = "Shared (Extension)";
 			sourceTree = "<group>";
 		};
-		31E701252B148B6300938333 /* Products */ = {
+		31677A022B15715C00E466BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31E701242B148B6300938333 /* Nostr Connect.app */,
-				31E701362B148B6300938333 /* Nostr Connect.app */,
-				31E701432B148B6300938333 /* Nostr Connect Extension.appex */,
-				31E7014D2B148B6300938333 /* Nostr Connect Extension.appex */,
+				31677A012B15715C00E466BD /* Nostr Connect.app */,
+				31677A132B15715C00E466BD /* Nostr Connect.app */,
+				31677A202B15715C00E466BD /* Nostr Connect Extension.appex */,
+				31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		31E701262B148B6300938333 /* iOS (App) */ = {
+		31677A032B15715C00E466BD /* iOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				31E701272B148B6300938333 /* AppDelegate.swift */,
-				31E701292B148B6300938333 /* SceneDelegate.swift */,
-				31E7012B2B148B6300938333 /* LaunchScreen.storyboard */,
-				31E7012E2B148B6300938333 /* Main.storyboard */,
-				31E701312B148B6300938333 /* Info.plist */,
+				31677A042B15715C00E466BD /* AppDelegate.swift */,
+				31677A062B15715C00E466BD /* SceneDelegate.swift */,
+				31677A082B15715C00E466BD /* LaunchScreen.storyboard */,
+				31677A0B2B15715C00E466BD /* Main.storyboard */,
+				31677A0E2B15715C00E466BD /* Info.plist */,
 			);
 			path = "iOS (App)";
 			sourceTree = "<group>";
 		};
-		31E701372B148B6300938333 /* macOS (App) */ = {
+		31677A142B15715C00E466BD /* macOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				31E701382B148B6300938333 /* AppDelegate.swift */,
-				31E7013A2B148B6300938333 /* Main.storyboard */,
-				31E7013D2B148B6300938333 /* Info.plist */,
-				31E7013E2B148B6300938333 /* Nostr Connect.entitlements */,
+				31677A152B15715C00E466BD /* AppDelegate.swift */,
+				31677A172B15715C00E466BD /* Main.storyboard */,
+				31677A1A2B15715C00E466BD /* Info.plist */,
+				31677A1B2B15715C00E466BD /* Nostr Connect.entitlements */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
 		};
-		31E701472B148B6300938333 /* iOS (Extension) */ = {
+		31677A242B15715C00E466BD /* iOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				31E701482B148B6300938333 /* Info.plist */,
+				31677A252B15715C00E466BD /* Info.plist */,
 			);
 			path = "iOS (Extension)";
 			sourceTree = "<group>";
 		};
-		31E701512B148B6300938333 /* macOS (Extension) */ = {
+		31677A2E2B15715C00E466BD /* macOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
-				31E701522B148B6300938333 /* Info.plist */,
-				31E701532B148B6300938333 /* Nostr Connect.entitlements */,
+				31677A2F2B15715C00E466BD /* Info.plist */,
+				31677A302B15715C00E466BD /* Nostr Connect.entitlements */,
 			);
 			path = "macOS (Extension)";
 			sourceTree = "<group>";
 		};
-		31E701722B148B6300938333 /* Resources */ = {
+		31677A4F2B15715C00E466BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				31E701732B148B6300938333 /* popup.html */,
-				31E701742B148B6300938333 /* nostr-provider.js */,
-				31E701752B148B6300938333 /* options.build.js */,
-				31E701762B148B6300938333 /* background.build.js */,
-				31E701772B148B6300938333 /* content-script.build.js */,
-				31E701782B148B6300938333 /* icons */,
-				31E701792B148B6300938333 /* prompt.html */,
-				31E7017A2B148B6300938333 /* style.css */,
-				31E7017B2B148B6300938333 /* manifest.json */,
-				31E7017C2B148B6300938333 /* prompt.build.js */,
-				31E7017D2B148B6300938333 /* options.html */,
-				31E7017E2B148B6300938333 /* common.js */,
-				31E7017F2B148B6300938333 /* popup.build.js */,
+				31677A502B15715C00E466BD /* popup.html */,
+				31677A512B15715C00E466BD /* nostr-provider.js */,
+				31677A522B15715C00E466BD /* options.build.js */,
+				31677A532B15715C00E466BD /* background.build.js */,
+				31677A542B15715C00E466BD /* content-script.build.js */,
+				31677A552B15715C00E466BD /* icons */,
+				31677A562B15715C00E466BD /* prompt.html */,
+				31677A572B15715C00E466BD /* style.css */,
+				31677A582B15715C00E466BD /* manifest.json */,
+				31677A592B15715C00E466BD /* prompt.build.js */,
+				31677A5A2B15715C00E466BD /* options.html */,
+				31677A5B2B15715C00E466BD /* common.js */,
+				31677A5C2B15715C00E466BD /* popup.build.js */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -288,51 +288,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		31E701232B148B6300938333 /* Nostr Connect (iOS) */ = {
+		31677A002B15715C00E466BD /* Nostr Connect (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31E701682B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */;
+			buildConfigurationList = 31677A452B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */;
 			buildPhases = (
-				31E701202B148B6300938333 /* Sources */,
-				31E701212B148B6300938333 /* Frameworks */,
-				31E701222B148B6300938333 /* Resources */,
-				31E701672B148B6300938333 /* Embed Foundation Extensions */,
+				316779FD2B15715C00E466BD /* Sources */,
+				316779FE2B15715C00E466BD /* Frameworks */,
+				316779FF2B15715C00E466BD /* Resources */,
+				31677A442B15715C00E466BD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				31E701462B148B6300938333 /* PBXTargetDependency */,
+				31677A232B15715C00E466BD /* PBXTargetDependency */,
 			);
 			name = "Nostr Connect (iOS)";
 			productName = "Nostr Connect (iOS)";
-			productReference = 31E701242B148B6300938333 /* Nostr Connect.app */;
+			productReference = 31677A012B15715C00E466BD /* Nostr Connect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		31E701352B148B6300938333 /* Nostr Connect (macOS) */ = {
+		31677A122B15715C00E466BD /* Nostr Connect (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31E7016F2B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect (macOS)" */;
+			buildConfigurationList = 31677A4C2B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (macOS)" */;
 			buildPhases = (
-				31E701322B148B6300938333 /* Sources */,
-				31E701332B148B6300938333 /* Frameworks */,
-				31E701342B148B6300938333 /* Resources */,
-				31E7016E2B148B6300938333 /* Embed Foundation Extensions */,
+				31677A0F2B15715C00E466BD /* Sources */,
+				31677A102B15715C00E466BD /* Frameworks */,
+				31677A112B15715C00E466BD /* Resources */,
+				31677A4B2B15715C00E466BD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				31E701502B148B6300938333 /* PBXTargetDependency */,
+				31677A2D2B15715C00E466BD /* PBXTargetDependency */,
 			);
 			name = "Nostr Connect (macOS)";
 			productName = "Nostr Connect (macOS)";
-			productReference = 31E701362B148B6300938333 /* Nostr Connect.app */;
+			productReference = 31677A132B15715C00E466BD /* Nostr Connect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		31E701422B148B6300938333 /* Nostr Connect Extension (iOS) */ = {
+		31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31E701642B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */;
+			buildConfigurationList = 31677A412B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */;
 			buildPhases = (
-				31E7013F2B148B6300938333 /* Sources */,
-				31E701402B148B6300938333 /* Frameworks */,
-				31E701412B148B6300938333 /* Resources */,
+				31677A1C2B15715C00E466BD /* Sources */,
+				31677A1D2B15715C00E466BD /* Frameworks */,
+				31677A1E2B15715C00E466BD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -340,16 +340,16 @@
 			);
 			name = "Nostr Connect Extension (iOS)";
 			productName = "Nostr Connect Extension (iOS)";
-			productReference = 31E701432B148B6300938333 /* Nostr Connect Extension.appex */;
+			productReference = 31677A202B15715C00E466BD /* Nostr Connect Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		31E7014C2B148B6300938333 /* Nostr Connect Extension (macOS) */ = {
+		31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 31E7016B2B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (macOS)" */;
+			buildConfigurationList = 31677A482B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (macOS)" */;
 			buildPhases = (
-				31E701492B148B6300938333 /* Sources */,
-				31E7014A2B148B6300938333 /* Frameworks */,
-				31E7014B2B148B6300938333 /* Resources */,
+				31677A262B15715C00E466BD /* Sources */,
+				31677A272B15715C00E466BD /* Frameworks */,
+				31677A282B15715C00E466BD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -357,34 +357,34 @@
 			);
 			name = "Nostr Connect Extension (macOS)";
 			productName = "Nostr Connect Extension (macOS)";
-			productReference = 31E7014D2B148B6300938333 /* Nostr Connect Extension.appex */;
+			productReference = 31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		31E701112B148B6200938333 /* Project object */ = {
+		316779EE2B15715B00E466BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					31E701232B148B6300938333 = {
+					31677A002B15715C00E466BD = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					31E701352B148B6300938333 = {
+					31677A122B15715C00E466BD = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					31E701422B148B6300938333 = {
+					31677A1F2B15715C00E466BD = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					31E7014C2B148B6300938333 = {
+					31677A292B15715C00E466BD = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 31E701142B148B6200938333 /* Build configuration list for PBXProject "Nostr Connect" */;
+			buildConfigurationList = 316779F12B15715B00E466BD /* Build configuration list for PBXProject "Nostr Connect" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -392,169 +392,169 @@
 				en,
 				Base,
 			);
-			mainGroup = 31E701102B148B6200938333;
-			productRefGroup = 31E701252B148B6300938333 /* Products */;
+			mainGroup = 316779ED2B15715B00E466BD;
+			productRefGroup = 31677A022B15715C00E466BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				31E701232B148B6300938333 /* Nostr Connect (iOS) */,
-				31E701352B148B6300938333 /* Nostr Connect (macOS) */,
-				31E701422B148B6300938333 /* Nostr Connect Extension (iOS) */,
-				31E7014C2B148B6300938333 /* Nostr Connect Extension (macOS) */,
+				31677A002B15715C00E466BD /* Nostr Connect (iOS) */,
+				31677A122B15715C00E466BD /* Nostr Connect (macOS) */,
+				31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */,
+				31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		31E701222B148B6300938333 /* Resources */ = {
+		316779FF2B15715C00E466BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701562B148B6300938333 /* Icon.png in Resources */,
-				31E7012D2B148B6300938333 /* LaunchScreen.storyboard in Resources */,
-				31E701542B148B6300938333 /* Main.html in Resources */,
-				31E7015A2B148B6300938333 /* Script.js in Resources */,
-				31E7015E2B148B6300938333 /* Assets.xcassets in Resources */,
-				31E701302B148B6300938333 /* Main.storyboard in Resources */,
-				31E701582B148B6300938333 /* Style.css in Resources */,
+				31677A332B15715C00E466BD /* Icon.png in Resources */,
+				31677A0A2B15715C00E466BD /* LaunchScreen.storyboard in Resources */,
+				31677A312B15715C00E466BD /* Main.html in Resources */,
+				31677A372B15715C00E466BD /* Script.js in Resources */,
+				31677A3B2B15715C00E466BD /* Assets.xcassets in Resources */,
+				31677A0D2B15715C00E466BD /* Main.storyboard in Resources */,
+				31677A352B15715C00E466BD /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701342B148B6300938333 /* Resources */ = {
+		31677A112B15715C00E466BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701572B148B6300938333 /* Icon.png in Resources */,
-				31E701592B148B6300938333 /* Style.css in Resources */,
-				31E7013C2B148B6300938333 /* Main.storyboard in Resources */,
-				31E7015B2B148B6300938333 /* Script.js in Resources */,
-				31E7015F2B148B6300938333 /* Assets.xcassets in Resources */,
-				31E701552B148B6300938333 /* Main.html in Resources */,
+				31677A342B15715C00E466BD /* Icon.png in Resources */,
+				31677A362B15715C00E466BD /* Style.css in Resources */,
+				31677A192B15715C00E466BD /* Main.storyboard in Resources */,
+				31677A382B15715C00E466BD /* Script.js in Resources */,
+				31677A3C2B15715C00E466BD /* Assets.xcassets in Resources */,
+				31677A322B15715C00E466BD /* Main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701412B148B6300938333 /* Resources */ = {
+		31677A1E2B15715C00E466BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701902B148B6300938333 /* background.build.js in Resources */,
-				31E701942B148B6300938333 /* style.css in Resources */,
-				31E701932B148B6300938333 /* prompt.html in Resources */,
-				31E7018F2B148B6300938333 /* options.build.js in Resources */,
-				31E701972B148B6300938333 /* options.html in Resources */,
-				31E701962B148B6300938333 /* prompt.build.js in Resources */,
-				31E701952B148B6300938333 /* manifest.json in Resources */,
-				31E7018E2B148B6300938333 /* nostr-provider.js in Resources */,
-				31E701922B148B6300938333 /* icons in Resources */,
-				31E701992B148B6300938333 /* popup.build.js in Resources */,
-				31E701982B148B6300938333 /* common.js in Resources */,
-				31E701912B148B6300938333 /* content-script.build.js in Resources */,
-				31E7018D2B148B6300938333 /* popup.html in Resources */,
+				31677A6D2B15715C00E466BD /* background.build.js in Resources */,
+				31677A712B15715C00E466BD /* style.css in Resources */,
+				31677A702B15715C00E466BD /* prompt.html in Resources */,
+				31677A6C2B15715C00E466BD /* options.build.js in Resources */,
+				31677A742B15715C00E466BD /* options.html in Resources */,
+				31677A732B15715C00E466BD /* prompt.build.js in Resources */,
+				31677A722B15715C00E466BD /* manifest.json in Resources */,
+				31677A6B2B15715C00E466BD /* nostr-provider.js in Resources */,
+				31677A6F2B15715C00E466BD /* icons in Resources */,
+				31677A762B15715C00E466BD /* popup.build.js in Resources */,
+				31677A752B15715C00E466BD /* common.js in Resources */,
+				31677A6E2B15715C00E466BD /* content-script.build.js in Resources */,
+				31677A6A2B15715C00E466BD /* popup.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E7014B2B148B6300938333 /* Resources */ = {
+		31677A282B15715C00E466BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701832B148B6300938333 /* background.build.js in Resources */,
-				31E701872B148B6300938333 /* style.css in Resources */,
-				31E701862B148B6300938333 /* prompt.html in Resources */,
-				31E701822B148B6300938333 /* options.build.js in Resources */,
-				31E7018A2B148B6300938333 /* options.html in Resources */,
-				31E701892B148B6300938333 /* prompt.build.js in Resources */,
-				31E701882B148B6300938333 /* manifest.json in Resources */,
-				31E701812B148B6300938333 /* nostr-provider.js in Resources */,
-				31E701852B148B6300938333 /* icons in Resources */,
-				31E7018C2B148B6300938333 /* popup.build.js in Resources */,
-				31E7018B2B148B6300938333 /* common.js in Resources */,
-				31E701842B148B6300938333 /* content-script.build.js in Resources */,
-				31E701802B148B6300938333 /* popup.html in Resources */,
+				31677A602B15715C00E466BD /* background.build.js in Resources */,
+				31677A642B15715C00E466BD /* style.css in Resources */,
+				31677A632B15715C00E466BD /* prompt.html in Resources */,
+				31677A5F2B15715C00E466BD /* options.build.js in Resources */,
+				31677A672B15715C00E466BD /* options.html in Resources */,
+				31677A662B15715C00E466BD /* prompt.build.js in Resources */,
+				31677A652B15715C00E466BD /* manifest.json in Resources */,
+				31677A5E2B15715C00E466BD /* nostr-provider.js in Resources */,
+				31677A622B15715C00E466BD /* icons in Resources */,
+				31677A692B15715C00E466BD /* popup.build.js in Resources */,
+				31677A682B15715C00E466BD /* common.js in Resources */,
+				31677A612B15715C00E466BD /* content-script.build.js in Resources */,
+				31677A5D2B15715C00E466BD /* popup.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		31E701202B148B6300938333 /* Sources */ = {
+		316779FD2B15715C00E466BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E7015C2B148B6300938333 /* ViewController.swift in Sources */,
-				31E701282B148B6300938333 /* AppDelegate.swift in Sources */,
-				31E7012A2B148B6300938333 /* SceneDelegate.swift in Sources */,
+				31677A392B15715C00E466BD /* ViewController.swift in Sources */,
+				31677A052B15715C00E466BD /* AppDelegate.swift in Sources */,
+				31677A072B15715C00E466BD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701322B148B6300938333 /* Sources */ = {
+		31677A0F2B15715C00E466BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E7015D2B148B6300938333 /* ViewController.swift in Sources */,
-				31E701392B148B6300938333 /* AppDelegate.swift in Sources */,
+				31677A3A2B15715C00E466BD /* ViewController.swift in Sources */,
+				31677A162B15715C00E466BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E7013F2B148B6300938333 /* Sources */ = {
+		31677A1C2B15715C00E466BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701602B148B6300938333 /* SafariWebExtensionHandler.swift in Sources */,
+				31677A3D2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		31E701492B148B6300938333 /* Sources */ = {
+		31677A262B15715C00E466BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E701612B148B6300938333 /* SafariWebExtensionHandler.swift in Sources */,
+				31677A3E2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		31E701462B148B6300938333 /* PBXTargetDependency */ = {
+		31677A232B15715C00E466BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 31E701422B148B6300938333 /* Nostr Connect Extension (iOS) */;
-			targetProxy = 31E701452B148B6300938333 /* PBXContainerItemProxy */;
+			target = 31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */;
+			targetProxy = 31677A222B15715C00E466BD /* PBXContainerItemProxy */;
 		};
-		31E701502B148B6300938333 /* PBXTargetDependency */ = {
+		31677A2D2B15715C00E466BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 31E7014C2B148B6300938333 /* Nostr Connect Extension (macOS) */;
-			targetProxy = 31E7014F2B148B6300938333 /* PBXContainerItemProxy */;
+			target = 31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */;
+			targetProxy = 31677A2C2B15715C00E466BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		31E701172B148B6200938333 /* Main.html */ = {
+		316779F42B15715B00E466BD /* Main.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				31E701182B148B6200938333 /* Base */,
+				316779F52B15715B00E466BD /* Base */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
 		};
-		31E7012B2B148B6300938333 /* LaunchScreen.storyboard */ = {
+		31677A082B15715C00E466BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				31E7012C2B148B6300938333 /* Base */,
+				31677A092B15715C00E466BD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		31E7012E2B148B6300938333 /* Main.storyboard */ = {
+		31677A0B2B15715C00E466BD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				31E7012F2B148B6300938333 /* Base */,
+				31677A0C2B15715C00E466BD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		31E7013A2B148B6300938333 /* Main.storyboard */ = {
+		31677A172B15715C00E466BD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				31E7013B2B148B6300938333 /* Base */,
+				31677A182B15715C00E466BD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -562,7 +562,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		31E701622B148B6300938333 /* Debug */ = {
+		31677A3F2B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -623,7 +623,7 @@
 			};
 			name = Debug;
 		};
-		31E701632B148B6300938333 /* Release */ = {
+		31677A402B15715C00E466BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -676,7 +676,7 @@
 			};
 			name = Release;
 		};
-		31E701652B148B6300938333 /* Debug */ = {
+		31677A422B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -706,7 +706,7 @@
 			};
 			name = Debug;
 		};
-		31E701662B148B6300938333 /* Release */ = {
+		31677A432B15715C00E466BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -737,7 +737,7 @@
 			};
 			name = Release;
 		};
-		31E701692B148B6300938333 /* Debug */ = {
+		31677A462B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -774,7 +774,7 @@
 			};
 			name = Debug;
 		};
-		31E7016A2B148B6300938333 /* Release */ = {
+		31677A472B15715C00E466BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -812,7 +812,7 @@
 			};
 			name = Release;
 		};
-		31E7016C2B148B6300938333 /* Debug */ = {
+		31677A492B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Nostr Connect.entitlements";
@@ -843,7 +843,7 @@
 			};
 			name = Debug;
 		};
-		31E7016D2B148B6300938333 /* Release */ = {
+		31677A4A2B15715C00E466BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Nostr Connect.entitlements";
@@ -874,19 +874,22 @@
 			};
 			name = Release;
 		};
-		31E701702B148B6300938333 /* Debug */ = {
+		31677A4D2B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Nostr Connect.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V757GRTBDF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -909,19 +912,22 @@
 			};
 			name = Debug;
 		};
-		31E701712B148B6300938333 /* Release */ = {
+		31677A4E2B15715C00E466BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Nostr Connect.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V757GRTBDF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -947,52 +953,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		31E701142B148B6200938333 /* Build configuration list for PBXProject "Nostr Connect" */ = {
+		316779F12B15715B00E466BD /* Build configuration list for PBXProject "Nostr Connect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31E701622B148B6300938333 /* Debug */,
-				31E701632B148B6300938333 /* Release */,
+				31677A3F2B15715C00E466BD /* Debug */,
+				31677A402B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31E701642B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */ = {
+		31677A412B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31E701652B148B6300938333 /* Debug */,
-				31E701662B148B6300938333 /* Release */,
+				31677A422B15715C00E466BD /* Debug */,
+				31677A432B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31E701682B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */ = {
+		31677A452B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31E701692B148B6300938333 /* Debug */,
-				31E7016A2B148B6300938333 /* Release */,
+				31677A462B15715C00E466BD /* Debug */,
+				31677A472B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31E7016B2B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (macOS)" */ = {
+		31677A482B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31E7016C2B148B6300938333 /* Debug */,
-				31E7016D2B148B6300938333 /* Release */,
+				31677A492B15715C00E466BD /* Debug */,
+				31677A4A2B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		31E7016F2B148B6300938333 /* Build configuration list for PBXNativeTarget "Nostr Connect (macOS)" */ = {
+		31677A4C2B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31E701702B148B6300938333 /* Debug */,
-				31E701712B148B6300938333 /* Release */,
+				31677A4D2B15715C00E466BD /* Debug */,
+				31677A4E2B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 31E701112B148B6200938333 /* Project object */;
+	rootObject = 316779EE2B15715B00E466BD /* Project object */;
 }
