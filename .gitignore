@@ -1,5 +1,10 @@
 node_modules
+*.build.js
 *.zip
 *.xpi
 /extension/releases/*.zip
 /extension/releases/*.xpi
+/extension/output/*.js
+/extension/output/*.html
+/extension/output/*.css
+/extension/output/*.json

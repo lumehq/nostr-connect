@@ -7,27 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31677A052B15715C00E466BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A042B15715C00E466BD /* AppDelegate.swift */; };
-		31677A072B15715C00E466BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A062B15715C00E466BD /* SceneDelegate.swift */; };
-		31677A0A2B15715C00E466BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A082B15715C00E466BD /* LaunchScreen.storyboard */; };
-		31677A0D2B15715C00E466BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A0B2B15715C00E466BD /* Main.storyboard */; };
 		31677A162B15715C00E466BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31677A152B15715C00E466BD /* AppDelegate.swift */; };
 		31677A192B15715C00E466BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31677A172B15715C00E466BD /* Main.storyboard */; };
-		31677A212B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31677A202B15715C00E466BD /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		31677A2B2B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		31677A312B15715C00E466BD /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 316779F42B15715B00E466BD /* Main.html */; };
 		31677A322B15715C00E466BD /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 316779F42B15715B00E466BD /* Main.html */; };
-		31677A332B15715C00E466BD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 316779F62B15715B00E466BD /* Icon.png */; };
 		31677A342B15715C00E466BD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 316779F62B15715B00E466BD /* Icon.png */; };
-		31677A352B15715C00E466BD /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 316779F72B15715B00E466BD /* Style.css */; };
 		31677A362B15715C00E466BD /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 316779F72B15715B00E466BD /* Style.css */; };
-		31677A372B15715C00E466BD /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 316779F82B15715B00E466BD /* Script.js */; };
 		31677A382B15715C00E466BD /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 316779F82B15715B00E466BD /* Script.js */; };
-		31677A392B15715C00E466BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779F92B15715B00E466BD /* ViewController.swift */; };
 		31677A3A2B15715C00E466BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779F92B15715B00E466BD /* ViewController.swift */; };
-		31677A3B2B15715C00E466BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316779FA2B15715C00E466BD /* Assets.xcassets */; };
 		31677A3C2B15715C00E466BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316779FA2B15715C00E466BD /* Assets.xcassets */; };
-		31677A3D2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */; };
 		31677A3E2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */; };
 		31677A5D2B15715C00E466BD /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A502B15715C00E466BD /* popup.html */; };
 		31677A5E2B15715C00E466BD /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A512B15715C00E466BD /* nostr-provider.js */; };
@@ -42,29 +30,9 @@
 		31677A672B15715C00E466BD /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5A2B15715C00E466BD /* options.html */; };
 		31677A682B15715C00E466BD /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5B2B15715C00E466BD /* common.js */; };
 		31677A692B15715C00E466BD /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5C2B15715C00E466BD /* popup.build.js */; };
-		31677A6A2B15715C00E466BD /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A502B15715C00E466BD /* popup.html */; };
-		31677A6B2B15715C00E466BD /* nostr-provider.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A512B15715C00E466BD /* nostr-provider.js */; };
-		31677A6C2B15715C00E466BD /* options.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A522B15715C00E466BD /* options.build.js */; };
-		31677A6D2B15715C00E466BD /* background.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A532B15715C00E466BD /* background.build.js */; };
-		31677A6E2B15715C00E466BD /* content-script.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A542B15715C00E466BD /* content-script.build.js */; };
-		31677A6F2B15715C00E466BD /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 31677A552B15715C00E466BD /* icons */; };
-		31677A702B15715C00E466BD /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A562B15715C00E466BD /* prompt.html */; };
-		31677A712B15715C00E466BD /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 31677A572B15715C00E466BD /* style.css */; };
-		31677A722B15715C00E466BD /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 31677A582B15715C00E466BD /* manifest.json */; };
-		31677A732B15715C00E466BD /* prompt.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A592B15715C00E466BD /* prompt.build.js */; };
-		31677A742B15715C00E466BD /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5A2B15715C00E466BD /* options.html */; };
-		31677A752B15715C00E466BD /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5B2B15715C00E466BD /* common.js */; };
-		31677A762B15715C00E466BD /* popup.build.js in Resources */ = {isa = PBXBuildFile; fileRef = 31677A5C2B15715C00E466BD /* popup.build.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		31677A222B15715C00E466BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 316779EE2B15715B00E466BD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 31677A1F2B15715C00E466BD;
-			remoteInfo = "Nostr Connect Extension (iOS)";
-		};
 		31677A2C2B15715C00E466BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 316779EE2B15715B00E466BD /* Project object */;
@@ -75,17 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		31677A442B15715C00E466BD /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				31677A212B15715C00E466BD /* Nostr Connect Extension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		31677A4B2B15715C00E466BD /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,7 +64,6 @@
 		316779F92B15715B00E466BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		316779FA2B15715C00E466BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		316779FC2B15715C00E466BD /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		31677A012B15715C00E466BD /* Nostr Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nostr Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31677A042B15715C00E466BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31677A062B15715C00E466BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		31677A092B15715C00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,7 +74,6 @@
 		31677A182B15715C00E466BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31677A1A2B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31677A1B2B15715C00E466BD /* Nostr Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Nostr Connect.entitlements"; sourceTree = "<group>"; };
-		31677A202B15715C00E466BD /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31677A252B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Connect Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31677A2F2B15715C00E466BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,21 +94,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		316779FE2B15715C00E466BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		31677A102B15715C00E466BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31677A1D2B15715C00E466BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,9 +157,7 @@
 		31677A022B15715C00E466BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31677A012B15715C00E466BD /* Nostr Connect.app */,
 				31677A132B15715C00E466BD /* Nostr Connect.app */,
-				31677A202B15715C00E466BD /* Nostr Connect Extension.appex */,
 				31677A2A2B15715C00E466BD /* Nostr Connect Extension.appex */,
 			);
 			name = Products;
@@ -288,25 +227,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		31677A002B15715C00E466BD /* Nostr Connect (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 31677A452B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */;
-			buildPhases = (
-				316779FD2B15715C00E466BD /* Sources */,
-				316779FE2B15715C00E466BD /* Frameworks */,
-				316779FF2B15715C00E466BD /* Resources */,
-				31677A442B15715C00E466BD /* Embed Foundation Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				31677A232B15715C00E466BD /* PBXTargetDependency */,
-			);
-			name = "Nostr Connect (iOS)";
-			productName = "Nostr Connect (iOS)";
-			productReference = 31677A012B15715C00E466BD /* Nostr Connect.app */;
-			productType = "com.apple.product-type.application";
-		};
 		31677A122B15715C00E466BD /* Nostr Connect (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31677A4C2B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (macOS)" */;
@@ -325,23 +245,6 @@
 			productName = "Nostr Connect (macOS)";
 			productReference = 31677A132B15715C00E466BD /* Nostr Connect.app */;
 			productType = "com.apple.product-type.application";
-		};
-		31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 31677A412B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */;
-			buildPhases = (
-				31677A1C2B15715C00E466BD /* Sources */,
-				31677A1D2B15715C00E466BD /* Frameworks */,
-				31677A1E2B15715C00E466BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Nostr Connect Extension (iOS)";
-			productName = "Nostr Connect Extension (iOS)";
-			productReference = 31677A202B15715C00E466BD /* Nostr Connect Extension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 		31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */ = {
 			isa = PBXNativeTarget;
@@ -370,13 +273,7 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					31677A002B15715C00E466BD = {
-						CreatedOnToolsVersion = 15.0;
-					};
 					31677A122B15715C00E466BD = {
-						CreatedOnToolsVersion = 15.0;
-					};
-					31677A1F2B15715C00E466BD = {
 						CreatedOnToolsVersion = 15.0;
 					};
 					31677A292B15715C00E466BD = {
@@ -397,29 +294,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				31677A002B15715C00E466BD /* Nostr Connect (iOS) */,
 				31677A122B15715C00E466BD /* Nostr Connect (macOS) */,
-				31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */,
 				31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		316779FF2B15715C00E466BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31677A332B15715C00E466BD /* Icon.png in Resources */,
-				31677A0A2B15715C00E466BD /* LaunchScreen.storyboard in Resources */,
-				31677A312B15715C00E466BD /* Main.html in Resources */,
-				31677A372B15715C00E466BD /* Script.js in Resources */,
-				31677A3B2B15715C00E466BD /* Assets.xcassets in Resources */,
-				31677A0D2B15715C00E466BD /* Main.storyboard in Resources */,
-				31677A352B15715C00E466BD /* Style.css in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		31677A112B15715C00E466BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,26 +311,6 @@
 				31677A382B15715C00E466BD /* Script.js in Resources */,
 				31677A3C2B15715C00E466BD /* Assets.xcassets in Resources */,
 				31677A322B15715C00E466BD /* Main.html in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31677A1E2B15715C00E466BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31677A6D2B15715C00E466BD /* background.build.js in Resources */,
-				31677A712B15715C00E466BD /* style.css in Resources */,
-				31677A702B15715C00E466BD /* prompt.html in Resources */,
-				31677A6C2B15715C00E466BD /* options.build.js in Resources */,
-				31677A742B15715C00E466BD /* options.html in Resources */,
-				31677A732B15715C00E466BD /* prompt.build.js in Resources */,
-				31677A722B15715C00E466BD /* manifest.json in Resources */,
-				31677A6B2B15715C00E466BD /* nostr-provider.js in Resources */,
-				31677A6F2B15715C00E466BD /* icons in Resources */,
-				31677A762B15715C00E466BD /* popup.build.js in Resources */,
-				31677A752B15715C00E466BD /* common.js in Resources */,
-				31677A6E2B15715C00E466BD /* content-script.build.js in Resources */,
-				31677A6A2B15715C00E466BD /* popup.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,30 +337,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		316779FD2B15715C00E466BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31677A392B15715C00E466BD /* ViewController.swift in Sources */,
-				31677A052B15715C00E466BD /* AppDelegate.swift in Sources */,
-				31677A072B15715C00E466BD /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		31677A0F2B15715C00E466BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				31677A3A2B15715C00E466BD /* ViewController.swift in Sources */,
 				31677A162B15715C00E466BD /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31677A1C2B15715C00E466BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31677A3D2B15715C00E466BD /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,11 +357,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		31677A232B15715C00E466BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 31677A1F2B15715C00E466BD /* Nostr Connect Extension (iOS) */;
-			targetProxy = 31677A222B15715C00E466BD /* PBXContainerItemProxy */;
-		};
 		31677A2D2B15715C00E466BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 31677A292B15715C00E466BD /* Nostr Connect Extension (macOS) */;
@@ -676,148 +514,14 @@
 			};
 			name = Release;
 		};
-		31677A422B15715C00E466BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect Extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.Nostr-Connect.Extension";
-				PRODUCT_NAME = "Nostr Connect Extension";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		31677A432B15715C00E466BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect Extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.Nostr-Connect.Extension";
-				PRODUCT_NAME = "Nostr Connect Extension";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		31677A462B15715C00E466BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.Nostr-Connect";
-				PRODUCT_NAME = "Nostr Connect";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		31677A472B15715C00E466BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Connect";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.Nostr-Connect";
-				PRODUCT_NAME = "Nostr Connect";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		31677A492B15715C00E466BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Nostr Connect.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V757GRTBDF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
@@ -847,8 +551,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Nostr Connect.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V757GRTBDF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
@@ -958,24 +664,6 @@
 			buildConfigurations = (
 				31677A3F2B15715C00E466BD /* Debug */,
 				31677A402B15715C00E466BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		31677A412B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect Extension (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				31677A422B15715C00E466BD /* Debug */,
-				31677A432B15715C00E466BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		31677A452B15715C00E466BD /* Build configuration list for PBXNativeTarget "Nostr Connect (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				31677A462B15715C00E466BD /* Debug */,
-				31677A472B15715C00E466BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
