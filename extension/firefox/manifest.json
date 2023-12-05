@@ -1,7 +1,7 @@
 {
   "name": "Nostr Connect",
   "description": "Nostr Signer Extension",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage_url": "https://github.com/reyamir/nostr-connect",
   "manifest_version": 2,
   "browser_specific_settings": {
