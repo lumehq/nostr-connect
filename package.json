@@ -1,33 +1,31 @@
 {
-  "license": "WTFPL",
-  "dependencies": {
-    "@radix-ui/react-checkbox": "^1.1.3",
-    "@radix-ui/react-tabs": "^1.1.2",
-    "async-mutex": "^0.3.2",
-    "esbuild": "^0.14.54",
-    "eslint": "^8.57.1",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-react": "^7.37.2",
-    "events": "^3.3.0",
-    "minidenticons": "^4.2.1",
-    "nostr-tools": "^1.17.0",
-    "prettier": "^2.8.8",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-native-svg": "^13.14.1",
-    "react-qr-code": "^2.0.15",
-    "use-boolean-state": "^1.0.2",
-    "use-debounce": "^7.0.1",
-    "webextension-polyfill": "^0.8.0"
-  },
-  "scripts": {
-    "dev": "./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css --watch",
-    "build": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css; ./build.js prod",
-    "package:chrome": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css --minify; ./build.js prod; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_chrome.zip",
-    "package:firefox": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css --minify; ./build.js prod firefox; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_firefox.xpi"
-  },
-  "devDependencies": {
-    "esbuild-plugin-copy": "^2.1.1",
-    "tailwindcss": "^3.4.17"
-  }
+	"license": "WTFPL",
+	"dependencies": {
+		"@radix-ui/react-checkbox": "^1.1.3",
+		"@radix-ui/react-tabs": "^1.1.2",
+		"async-mutex": "^0.3.2",
+		"esbuild": "^0.14.54",
+		"events": "^3.3.0",
+		"minidenticons": "^4.2.1",
+		"nostr-tools": "^2.10.4",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-native-svg": "^13.14.1",
+		"react-qr-code": "^2.0.15",
+		"use-boolean-state": "^1.0.2",
+		"use-debounce": "^7.0.1",
+		"webextension-polyfill": "^0.12.0"
+	},
+	"scripts": {
+		"dev": "./build.js; pnpm exec tailwindcss -i ./extension/style.css -o ./extension/build/style.css --watch",
+		"build": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css; ./build.js prod",
+		"package:chrome": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css --minify; ./build.js prod; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_chrome.zip",
+		"package:firefox": "pnpm exec tailwindcss -i ./extension/style.css -o ./extension/output/style.css --minify; ./build.js prod firefox; cd extension/output; zip -r archive *; cd ../../; mv extension/output/archive.zip extension/releases/nostrconnect_firefox.xpi"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/webextension-polyfill": "^0.12.1",
+		"esbuild-plugin-copy": "^2.1.1",
+		"tailwindcss": "^3.4.17"
+	}
 }

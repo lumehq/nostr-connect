@@ -1,36 +1,37 @@
-import browser from 'webextension-polyfill'
+import browser from "webextension-polyfill";
 
-const EXTENSION = 'nostrconnect'
+const EXTENSION = "nostrconnect";
 
 // inject the script that will provide window.nostr
-let script = document.createElement('script')
-script.setAttribute('async', 'false')
-script.setAttribute('type', 'text/javascript')
-script.setAttribute('src', browser.runtime.getURL('nostr-provider.js'))
-document.head.appendChild(script)
+const script = document.createElement("script");
+script.setAttribute("async", "false");
+script.setAttribute("type", "text/javascript");
+script.setAttribute("src", browser.runtime.getURL("nostr-provider.js"));
+document.head.appendChild(script);
 
 // listen for messages from that script
-window.addEventListener('message', async message => {
-  if (message.source !== window) return
-  if (!message.data) return
-  if (!message.data.params) return
-  if (message.data.ext !== EXTENSION) return
+window.addEventListener("message", async (message) => {
+	if (message.source !== window) return;
+	if (!message.data) return;
+	if (!message.data.params) return;
+	if (message.data.ext !== EXTENSION) return;
 
-  // pass on to background
-  var response
-  try {
-    response = await browser.runtime.sendMessage({
-      type: message.data.type,
-      params: message.data.params,
-      host: location.host
-    })
-  } catch (error) {
-    response = {error}
-  }
+	// pass on to background
+	let response;
 
-  // return response
-  window.postMessage(
-    {id: message.data.id, ext: EXTENSION, response},
-    message.origin
-  )
-})
+	try {
+		response = await browser.runtime.sendMessage({
+			type: message.data.type,
+			params: message.data.params,
+			host: location.host,
+		});
+	} catch (error) {
+		response = { error };
+	}
+
+	// return response
+	window.postMessage(
+		{ id: message.data.id, ext: EXTENSION, response },
+		message.origin,
+	);
+});
