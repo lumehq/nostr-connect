@@ -1,13 +1,21 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { minidenticon } from "minidenticons";
 import { getPublicKey, nip19 } from "nostr-tools";
-import React, { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import QRCode from "react-qr-code";
 import browser from "webextension-polyfill";
 import { SettingsIcon } from "./icons";
+import { createRoot } from "react-dom/client";
+
+type Keys = {
+	npub: string;
+	hex: string;
+	nprofile: string;
+};
 
 function Popup() {
-	const [keys, setKeys] = useState(null);
+	const [keys, setKeys] = useState<Keys | null>(null);
+
 	const avatarURI = useMemo(
 		() =>
 			keys
@@ -25,26 +33,38 @@ function Popup() {
 	useEffect(() => {
 		browser.storage.local.get(["private_key", "relays"]).then((results) => {
 			if (results.private_key) {
-				const hexKey = getPublicKey(results.private_key);
-				const npubKey = nip19.npubEncode(hexKey);
+				const decoded = nip19.decode(results.private_key as unknown as string);
 
-				setKeys({ npub: npubKey, hex: hexKey });
+				if (decoded.type === "nsec") {
+					const nsec = decoded.data;
+					const hexKey = getPublicKey(nsec);
+					const npubKey = nip19.npubEncode(hexKey);
 
-				if (results.relays) {
-					const relaysList = [];
-					for (const url in results.relays) {
-						if (results.relays[url].write) {
-							relaysList.push(url);
-							if (relaysList.length >= 3) break;
+					setKeys({ npub: npubKey, hex: hexKey, nprofile: "" });
+
+					if (results.relays) {
+						const relaysList: string[] = [];
+
+						for (const url in results.relays) {
+							if (results.relays[url].write) {
+								relaysList.push(url);
+								if (relaysList.length >= 3) break;
+							}
+						}
+
+						if (relaysList.length) {
+							const nprofileKey = nip19.nprofileEncode({
+								pubkey: hexKey,
+								relays: relaysList,
+							});
+
+							setKeys((prev) =>
+								prev ? { ...prev, nprofile: nprofileKey } : null,
+							);
 						}
 					}
-					if (relaysList.length) {
-						const nprofileKey = nip19.nprofileEncode({
-							pubkey: hexKey,
-							relays: relaysList,
-						});
-						setKeys((prev) => ({ ...prev, nprofile: nprofileKey }));
-					}
+				} else {
+					setKeys(null);
 				}
 			} else {
 				setKeys(null);
@@ -179,6 +199,6 @@ function Popup() {
 }
 
 const container = document.getElementById("main");
-const root = createRoot(container);
+const root = createRoot(container!);
 
 root.render(<Popup />);

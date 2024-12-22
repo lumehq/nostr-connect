@@ -1,7 +1,7 @@
 import * as Checkbox from "@radix-ui/react-checkbox";
 import * as Tabs from "@radix-ui/react-tabs";
-import { generatePrivateKey, nip19 } from "nostr-tools";
-import React, { useState, useCallback, useEffect } from "react";
+import { nip19, generateSecretKey } from "nostr-tools";
+import { useState, useCallback, useEffect } from "react";
 import QRCode from "react-qr-code";
 import browser from "webextension-polyfill";
 import { removePermissions } from "./common";
@@ -17,16 +17,17 @@ function Options() {
 	);
 	const [hidingPrivateKey, hidePrivateKey] = useState(true);
 	const [showNotifications, setNotifications] = useState(false);
-	const [messages, setMessages] = useState([]);
+	const [messages, setMessages] = useState<string[]>([]);
 	const [handleNostrLinks, setHandleNostrLinks] = useState(false);
 	const [showProtocolHandlerHelp, setShowProtocolHandlerHelp] = useState(false);
 	const [unsavedChanges, setUnsavedChanges] = useState([]);
 
-	const showMessage = useCallback((msg) => {
+	const showMessage = useCallback((msg: string) => {
 		messages.push(msg);
+
 		setMessages(messages);
 		setTimeout(() => setMessages([]), 3000);
-	});
+	}, []);
 
 	useEffect(() => {
 		browser.storage.local
@@ -515,7 +516,7 @@ examples:
 	}
 
 	async function generate() {
-		setPrivKey(nip19.nsecEncode(generatePrivateKey()));
+		setPrivKey(nip19.nsecEncode(generateSecretKey()));
 		addUnsavedChanges("private_key");
 	}
 
